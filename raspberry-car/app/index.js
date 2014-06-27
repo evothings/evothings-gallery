@@ -173,7 +173,7 @@ ThumbStick.prototype.emitChangedDirection = function()
 			if (arguments[arg] == this.directions[dir]) found = true
 		if (!found)
 		{
-			// console.log('stopping direction \'' + this.getDirectionName(this.directions[dir]) + '\'')
+			hyper.log('stopping direction \'' + this.getDirectionName(this.directions[dir]) + '\'')
 			socket.emit('direction', 'STOP' + this.getDirectionName(this.directions[dir]))
 			this.directions.splice(dir, 1)
 		}
@@ -184,7 +184,7 @@ ThumbStick.prototype.emitChangedDirection = function()
 	{
 		if (-1 == this.directions.indexOf(arguments[i]) && arguments[i] != null)
 		{
-			// console.log('starting direction: \'' + this.getDirectionName(arguments[i]) + '\'')
+			hyper.log('starting direction: \'' + this.getDirectionName(arguments[i]) + '\'')
 			this.directions.push(arguments[i])
 			socket.emit('direction', this.getDirectionName(arguments[i]))
 		}
