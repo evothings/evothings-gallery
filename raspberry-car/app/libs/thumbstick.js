@@ -1,9 +1,9 @@
 
-var ThumbStick = function() {
+var ThumbStick = function(canvasId) {
 
 	this.DIRECTION = {UP: 0, RIGHT: 1, DOWN: 2, LEFT: 3}
 
-	this.canvas = document.getElementById("stage")
+	this.canvas = document.getElementById(canvasId)
 	this.context = this.canvas.getContext("2d")
 
 	this.thumbstickImage = new Image()

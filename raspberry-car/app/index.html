@@ -13,21 +13,27 @@
 	<script>
 	$(document).ready(function() {
 
+		// Connect to the server running on the Raspberry Pi.
 		var socket = io.connect('http://192.168.2.2:8085')
 		socket.on('connect', function() {
 			hyper.log('connected!');
 		})
 
-		var thumbStick = new ThumbStick()
+		// Create a thumbstick in the canvas.
+		var thumbStick = new ThumbStick('stage')
 		thumbStick.init()
 		$(window).resize(thumbStick.onResizeCanvas.bind(thumbStick))
 
+		// Listen for directional events from the thumbstick and send them to
+		// the Raspberry Pi, which sends corresponding signals to the car's
+		// remote control.
 		thumbStick.addEventListener(
 			['UP', 'DOWN', 'LEFT', 'RIGHT',
 			'STOPUP', 'STOPDOWN', 'STOPLEFT', 'STOPRIGHT'],
 			function(directionEvent) {
 				socket.emit('direction', directionEvent)
 			})
+
 	})
 	</script>
 </head>
