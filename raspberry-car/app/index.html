@@ -13,17 +13,23 @@
 	<script src="index.js"></script>
 	<script src="http://192.168.2.2:8085/socket.io/socket.io.js"></script>
 	<script>
-	var socket = null;
 	$(document).ready(function() {
 
-		socket = io.connect('http://192.168.2.2:8085');
-		socket.on('connect', function(){
+		var socket = io.connect('http://192.168.2.2:8085');
+		socket.on('connect', function() {
 			console.log('connected!');
 		});
 
 		var thumbStick = new ThumbStick();
 		thumbStick.init();
 		$(window).resize(thumbStick.onResizeCanvas.bind(thumbStick));
+
+		thumbStick.addEventListener(
+			['UP', 'DOWN', 'LEFT', 'RIGHT',
+			'STOPUP', 'STOPDOWN', 'STOPLEFT', 'STOPRIGHT'],
+			function(directionEvent) {
+				socket.emit('direction', directionEvent)
+			});
 	});
 	</script>
 </head>

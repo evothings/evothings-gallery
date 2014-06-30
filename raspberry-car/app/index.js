@@ -30,6 +30,12 @@ var ThumbStick = function() {
 		y: (this.canvas.offsetHeight / 2)
 	}
 
+	this.eventNames = [
+		'UP', 'STOPUP', 'DOWN', 'STOPDOWN', 'LEFT', 'STOPLEFT',
+		'RIGHT', 'STOPRIGHT'
+	]
+	this.eventListeners = {}
+
 };
 
 ThumbStick.prototype.draw = function() {
@@ -40,26 +46,6 @@ ThumbStick.prototype.draw = function() {
 		this.canvas.offsetHeight
 	)
 	this.drawStick()
-};
-
-ThumbStick.prototype.drawPoint = function() {
-	this.context.save()
-
-	this.context.beginPath()
-	this.context.arc(
-		this.point.x,
-		this.point.y,
-		this.point.radius,
-		0,
-		(Math.PI * 2),
-		true
-	)
-
-	this.context.lineWidth = 3
-	this.context.strokeStyle = "rgb(0, 200, 0)"
-	this.context.stroke()
-
-	this.context.restore()
 };
 
 ThumbStick.prototype.drawStick = function() {
@@ -173,8 +159,7 @@ ThumbStick.prototype.emitChangedDirection = function()
 			if (arguments[arg] == this.directions[dir]) found = true
 		if (!found)
 		{
-			hyper.log('stopping direction \'' + this.getDirectionName(this.directions[dir]) + '\'')
-			socket.emit('direction', 'STOP' + this.getDirectionName(this.directions[dir]))
+			this.emitEvent('STOP' + this.getDirectionName(this.directions[dir]))
 			this.directions.splice(dir, 1)
 		}
 	}
@@ -184,11 +169,30 @@ ThumbStick.prototype.emitChangedDirection = function()
 	{
 		if (-1 == this.directions.indexOf(arguments[i]) && arguments[i] != null)
 		{
-			hyper.log('starting direction: \'' + this.getDirectionName(arguments[i]) + '\'')
+			this.emitEvent(this.getDirectionName(arguments[i]))
 			this.directions.push(arguments[i])
-			socket.emit('direction', this.getDirectionName(arguments[i]))
 		}
 	}
+};
+
+ThumbStick.prototype.addEventListener = function(eventNames, callback) {
+	if (typeof eventNames == 'string')
+		eventNames = [eventNames];
+	if (typeof eventNames == 'object')
+	{
+		for (var name in eventNames) {
+			if (!(eventNames[name] in this.eventListeners))
+				this.eventListeners[eventNames[name]] = []
+			this.eventListeners[eventNames[name]].push(callback)
+		}
+	}
+}
+
+ThumbStick.prototype.emitEvent = function(eventName) {
+	if (!(eventName in this.eventListeners))
+		return false;
+	for (var listener in this.eventListeners[eventName])
+		this.eventListeners[eventName][listener](eventName)
 };
 
 ThumbStick.prototype.getDirectionName = function(direction)
