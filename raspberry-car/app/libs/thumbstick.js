@@ -23,13 +23,6 @@ var ThumbStick = function(canvasId) {
 
 	this.directions = []
 
-	this.point = {
-		radius: 20,
-		speed: 15,
-		x: (this.canvas.offsetWidth / 2),
-		y: (this.canvas.offsetHeight / 2)
-	}
-
 	this.eventNames = [
 		'UP', 'STOPUP', 'DOWN', 'STOPDOWN', 'LEFT', 'STOPLEFT',
 		'RIGHT', 'STOPRIGHT'
@@ -175,7 +168,8 @@ ThumbStick.prototype.emitChangedDirection = function()
 	}
 };
 
-ThumbStick.prototype.addEventListener = function(eventNames, callback) {
+ThumbStick.prototype.addEventListener = function(eventNames, callback)
+{
 	if (typeof eventNames == 'string')
 		eventNames = [eventNames];
 	if (typeof eventNames == 'object')
@@ -188,7 +182,16 @@ ThumbStick.prototype.addEventListener = function(eventNames, callback) {
 	}
 }
 
-ThumbStick.prototype.emitEvent = function(eventName) {
+ThumbStick.prototype.removeEventListeners = function(eventName)
+{
+	if (typeof eventName != 'string') return false;
+	if (!(eventName in this.eventListeners)) return true;
+	this.eventListeners[eventName] = []
+	return true;
+};
+
+ThumbStick.prototype.emitEvent = function(eventName)
+{
 	if (!(eventName in this.eventListeners))
 		return false;
 	for (var listener in this.eventListeners[eventName])
@@ -208,8 +211,6 @@ ThumbStick.prototype.update = function(elapsed)
 	this.stick.update()
 
 	this.updateDirection(elapsed)
-
-	this.updatePoint(elapsed)
 };
 
 ThumbStick.prototype.updateDirection = function(elapsed)
@@ -223,7 +224,8 @@ ThumbStick.prototype.updateDirection = function(elapsed)
 	if (-this.stick.normal.y < 0) angle += 2 * Math.PI
 	angle = Math.abs( (angle / (Math.PI * 2)) * 360 )
 
-	if (this.stick.length > 25.0) {
+	if (this.stick.length > 25.0)
+	{
 
 		if (Math.abs(this.stick.normal.x) == 0 && Math.abs(this.stick.normal.y) == 0)
 			this.emitChangedDirection(null)
@@ -250,40 +252,17 @@ ThumbStick.prototype.updateDirection = function(elapsed)
 		else 
 			this.emitChangedDirection(null)
 
-	}else if (this.stick.length == 0) {
+	}
+	else if (this.stick.length == 0)
+	{
 
 		this.emitChangedDirection(null)
 
 	}
 };
 
-ThumbStick.prototype.updatePoint = function(elapsed) {
-	if (!this.stick.active || (this.stick.length < this.threshold))
-		return;
-
-	this.point.x += (
-		(this.stick.length * this.stick.normal.x)
-		* this.point.speed
-		* (elapsed / 1000)
-	)
-	this.point.y += (
-		(this.stick.length * this.stick.normal.y)
-		* this.point.speed
-		* (elapsed / 1000)
-	)
-
-	if (this.point.x < this.point.radius)
-		this.point.x = this.point.radius
-	else if (this.point.x > (this.canvas.offsetWidth - this.point.radius))
-		this.point.x = (this.canvas.offsetWidth - this.point.radius)
-
-	if (this.point.y < this.point.radius)
-		this.point.y = this.point.radius
-	else if (this.point.y > (this.canvas.offsetHeight - this.point.radius))
-		this.point.y = (this.canvas.offsetHeight - this.point.radius)
-};
-
-ThumbStick.prototype.main = function() {
+ThumbStick.prototype.main = function()
+{
 	var now = Date.now()
 	var elapsed = (now - this.lastTime)
 
@@ -294,43 +273,49 @@ ThumbStick.prototype.main = function() {
 };
 
 
-function Stick (maxLength, active) {
-	this.active = active;
-	this.atLimit = false;
-	this.length = 1;
-	this.maxLength = maxLength;
+function Stick (maxLength, active)
+{
+	this.active = active
+	this.atLimit = false
+	this.length = 1
+	this.maxLength = maxLength
 	this.limit = {
 		x: 0,
 		y: 0
-	};
+	}
 	this.input = {
 		x: 0,
 		y: 0
-	};
+	}
 };
 
-Stick.prototype.setSize = function(maxLength) {
-	this.maxLength = maxLength;
+Stick.prototype.setSize = function(maxLength)
+{
+	this.maxLength = maxLength
 };
 
-Stick.prototype.getRadians = function (x, y) {
+Stick.prototype.getRadians = function (x, y)
+{
 	return Math.atan2(x, -y);
 };
 
-Stick.prototype.getVectorFromRadians = function (radians, length) {
-	length = (Number(length) || 1);
+Stick.prototype.getVectorFromRadians = function (radians, length)
+{
+	length = (Number(length) || 1)
 	return {
 		x: (Math.sin(radians) * length),
 		y: (-Math.cos(radians) * length)
 	};
 };
 
-Stick.prototype.getVectorLength = function (v) {
+Stick.prototype.getVectorLength = function (v)
+{
 	return Math.sqrt((v.x * v.x) + (v.y * v.y));
 };
 
-Stick.prototype.getVectorNormal = function (v) {
-	var len = this.getVectorLength(v);
+Stick.prototype.getVectorNormal = function (v)
+{
+	var len = this.getVectorLength(v)
 	if (len === 0) {
 		return v;
 	} else {
@@ -341,45 +326,50 @@ Stick.prototype.getVectorNormal = function (v) {
 	}
 };
 
-Stick.prototype.setLimitXY = function (x, y) {
+Stick.prototype.setLimitXY = function (x, y)
+{
 	this.limit = {
 		x: x,
 		y: y
-	};
+	}
 };
 
-Stick.prototype.setInputXY = function (x, y) {
+Stick.prototype.setInputXY = function (x, y)
+{
 	this.input = {
 		x: x,
 		y: y
-	};
+	}
 };
 
-Stick.prototype.subtractVectors = function (v1, v2) {
+Stick.prototype.subtractVectors = function (v1, v2)
+{
 	return {
 		x: (v1.x - v2.x),
 		y: (v1.y - v2.y)
 	};
 };
 
-Stick.prototype.update = function () {
-	var diff = this.subtractVectors(this.input, this.limit);
-	var length = this.getVectorLength(diff);
+Stick.prototype.update = function ()
+{
+	var diff = this.subtractVectors(this.input, this.limit)
+	var length = this.getVectorLength(diff)
 
-	if (Math.round(length) >= this.maxLength) {
-		length = this.maxLength;
+	if (Math.round(length) >= this.maxLength)
+	{
+		length = this.maxLength
 
-		var rads = this.getRadians(diff.x, diff.y);
+		var rads = this.getRadians(diff.x, diff.y)
 
-		this.atLimit = true;
-		this.input = this.getVectorFromRadians(rads, length);
-		this.input.x += this.limit.x;
-		this.input.y += this.limit.y;
+		this.atLimit = true
+		this.input = this.getVectorFromRadians(rads, length)
+		this.input.x += this.limit.x
+		this.input.y += this.limit.y
 	} else {
-		this.atLimit = false;
+		this.atLimit = false
 	}
 
-	this.length = length;
-	this.normal = this.getVectorNormal(diff);
+	this.length = length
+	this.normal = this.getVectorNormal(diff)
 };
 
