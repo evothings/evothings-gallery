@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "description": "Raspberry Car",
+      "author": "Evothings",
+      "image": "http://evomedia.evothings.com/gallery/raspberry-car/app_screenshot.png",
+      "url": "http://evomedia.evothings.com/gallery/raspberry-car/",
+      "links": {
+        "YouTube": "https://www.youtube.com/watch?v=rAHd6haIOQE",
+        "Article": "http://evothings.com/controlling-a-toy-car-with-evothings-and-raspberry-pi/"
+      },
+      "tags": "raspberrypi"
+    },
+    {
       "description": "BLE Discovery",
       "author": "Evothings",
       "image": "http://evomedia.evothings.com/doc/images/ble-discovery-screenshot.png",
