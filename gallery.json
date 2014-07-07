@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "description": "BLE Discovery",
+      "author": "Evothings",
+      "image": "images/ble-discovery-screenshot.png",
+      "url": "ble-ti-sensortag.html",
+      "links": {
+        "YouTube": "http://www.youtube.com/",
+        "Docs": "http://evomedia.evothings.com/doc/ble-discovery.html",
+        "Guide": "http://evomedia.evothings.com/doc/ble-discovery.html",
+        "Link 4": "http://evomedia.evothings.com/doc/ble-discovery.html",
+        "Link 5": "http://evomedia.evothings.com/doc/ble-discovery.html",
+        "Link 6": "http://evomedia.evothings.com/doc/ble-discovery.html"
+      },
+      "tags": "example"
+    },
+    {
+      "description": "BLE TI SensorTag",
+      "author": "Evothings",
+      "image": "images/ble-ti-sensortag-screenshot.png",
+      "url": "ble-ti-sensortag.html",
+      "links": {
+        "YouTube": "http://www.youtube.com/",
+        "Docs": "http://evomedia.evothings.com/doc/ble-ti-sensortag.html"
+      },
+      "tags": "example"
+    },
+    {
+      "description": "Arduino BLE",
+      "author": "Evothings",
+      "image": "images/arduino-ble-screenshot.png",
+      "url": "arduino-ble.html",
+      "links": {
+        "YouTube": "http://www.youtube.com/"
+      },
+      "tags": "example"
+    },
+    {
+      "description": "BLE Discovery",
+      "author": "Evothings",
+      "image": "images/ble-discovery-screenshot.png",
+      "url": "ble-ti-sensortag.html",
+      "tags": "example"
+    },
+    {
+      "description": "BLE TI SensorTag",
+      "author": "Evothings",
+      "image": "images/ble-ti-sensortag-screenshot.png",
+      "url": "ble-ti-sensortag.html",
+      "links": {
+        "YouTube": "http://www.youtube.com/",
+        "Docs": "http://evomedia.evothings.com/doc/"
+      },
+      "tags": "example"
+    },
+    {
+      "description": "Arduino BLE",
+      "author": "Evothings",
+      "image": "images/arduino-ble-screenshot.png",
+      "url": "arduino-ble.html",
+      "links": {
+        "Twitter": "http://www.twitter.com/"
+      },
+      "tags": "example"
+    }
+  ]
+}
