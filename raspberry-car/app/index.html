@@ -35,7 +35,9 @@
 			['UP', 'DOWN', 'LEFT', 'RIGHT',
 			'STOPUP', 'STOPDOWN', 'STOPLEFT', 'STOPRIGHT'],
 			function(directionEvent) {
-				socket.emit('direction', directionEvent)
+				try {
+					socket.emit('direction', directionEvent)
+				} catch (error) { }
 			})
 
 	})
