@@ -1,0 +1,144 @@
+/*
+File: gallery.css
+Description: Evothings Gallery.
+Author: Eric Svensson
+Copyright (c) 2013-2014 Evothings AB
+*/
+
+#page {
+	padding-left: 1.5%;
+}
+
+#page_top_margin_aspect {
+	display: block;
+	width: 1.5%;
+}
+#page_top_margin_aspect:after {
+	display: block;
+	padding-top: 100%;
+	content: '';
+}
+
+div#intro {
+	padding-bottom: 2%;
+}
+
+#list_item_template { display: none; }
+
+.list_item {
+	display: none;
+	width: 30%;
+	margin-right: 3%;
+	margin-bottom: 2%;
+
+	overflow: hidden;
+	vertical-align: top;
+}
+.list_item.visible { display: inline-block; }
+
+#list
+a.screenshot {
+	display: block;
+	position: relative;
+
+	width: 100%;
+	margin-bottom: 1.8em;
+
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+#list
+a.screenshot:after {
+	display: block;
+	padding-top: 100%;
+	content: '';
+}
+
+#list
+a.screenshot img {
+	display: block;
+	position: absolute;
+	top: 1%;
+	bottom: 1%;
+	left: 1%;
+	right: 1%;
+
+	margin: 0 auto;
+	max-width: 98%;
+	max-height: 98%;
+}
+
+#list
+.description {
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: -2em;
+	
+	width: 100%;
+	height: 2em;
+
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	
+	line-height: 2em;
+}
+#list
+a.screenshot:hover .description {
+	text-decoration: underline;
+}
+
+#list
+.author_wrapper {
+	float: right;
+	padding: 0 0.4em;
+	margin: 1% 0 0 1%;
+
+	height: 2em;
+	max-width: 50%;
+
+	font-size: 70%;
+	text-align: right;
+	line-height: 2em;
+	vertical-align: middle;
+
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+	border: none;
+	border-radius: 3px;
+	background-color: #cdcdcd;
+}
+
+#list
+.resource {
+	display: none;
+	float: left;
+	padding: 0 0.5em;
+	margin: 1% 1% 0 0;
+
+	height: 2em;
+
+	border: none;
+	border-radius: 3px;
+	background: #9e9e9e;
+
+	font-size: 70%;
+	line-height: 2em;
+	vertical-align: middle;
+}
+
+#list a.resource-YouTube { background: #0f0; }
+#list a.resource-Docs { background: #f00; }
+
+@media screen and (orientation: landscape) {
+	/* Show three columns */
+	.list_item { width: 30%; }
+}
+
+@media screen and (orientation: portrait) {
+	/* Show two columns */
+	.list_item { width: 47%; }
+}
