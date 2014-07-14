@@ -27,8 +27,8 @@
 
 		thumbStick.onUpdate = function()
 		{
-			controlX = Math.round(-((thumbStick.stick.length * thumbStick.stick.normal.x)/thumbStick.stick.maxLength)*127);
-			controlY = Math.round(-((thumbStick.stick.length * thumbStick.stick.normal.y)/thumbStick.stick.maxLength)*127);
+			controlX = Math.round(-((thumbStick.stick.length * thumbStick.stick.normal.x) / thumbStick.stick.maxLength) * 127)
+			controlY = Math.round(-((thumbStick.stick.length * thumbStick.stick.normal.y) / thumbStick.stick.maxLength) * 127)
 		}
 
 		setInterval(function() {
