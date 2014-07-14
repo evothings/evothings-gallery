@@ -135,7 +135,7 @@ ThumbStick.prototype.onResizeCanvas = function()
 
 	this.stick.setLimitXY(
 		this.canvas.offsetWidth / 2,
-		this.canvas.offsetHeight /2 )
+		this.canvas.offsetHeight / 2 )
 
 	this.stick.setInputXY(
 		this.canvas.offsetWidth / 2,
@@ -211,6 +211,9 @@ ThumbStick.prototype.update = function(elapsed)
 	this.stick.update()
 
 	this.updateDirection(elapsed)
+
+	if (this.onUpdate)
+		this.onUpdate()
 };
 
 ThumbStick.prototype.updateDirection = function(elapsed)
@@ -292,6 +295,11 @@ function Stick (maxLength, active)
 Stick.prototype.setSize = function(maxLength)
 {
 	this.maxLength = maxLength
+};
+
+Stick.prototype.getSize = function()
+{
+	return this.maxLength;
 };
 
 Stick.prototype.getRadians = function (x, y)
