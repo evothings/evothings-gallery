@@ -1,0 +1,37 @@
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	color: #000;
+}
+
+h1 {
+	width: 100%;
+	height: 2em;
+	margin: 0;
+	padding: 0; 
+
+	background: rgb(33,70,92);
+
+	font-size: 2.2em;
+	font-weight: normal;
+	line-height: 2em;
+	text-align: center;
+	vertical-align: middle;
+	color: #eee;
+}
+
+#info {
+	height: 8%;
+	font-size: 1em;
+}
+
+#canvas_container {
+	width: 98%;
+	height: 80%;
+	margin: 0;
+	padding: 1%;
+}
