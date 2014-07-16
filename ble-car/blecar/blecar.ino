@@ -16,6 +16,7 @@
 // #define DEBUG 1
 
 // arduino - car control (BLE)
+//                                               version: 1.0 - 15.07.2014
 
 // library: ble 
 #include <SPI.h>
@@ -29,19 +30,16 @@
 #define STEER_PIN 2           // digital out for steer servo
 #define DRIVE_PIN 3           // digital out for drive servo
 
-// #define DELAY_THRESHOLD 12 // exactly 20ms
-   #define DELAY_THRESHOLD 15 // can be some delay between thread switches
-
 // normal: 1000 - 1500 - 2000
 #define STEER_MIN       1200  // right
 #define STEER_CENTER    1500  // center
 #define STEER_MAX       1800  // left
-#define STEER_DELAY     (20-DELAY_THRESHOLD)
+#define STEER_DELAY     15
 
 #define DRIVE_MIN       1000  // forward
 #define DRIVE_CENTER    1500  // still
 #define DRIVE_MAX       2000  // reverse
-#define DRIVE_DELAY     (20-DELAY_THRESHOLD)
+#define DRIVE_DELAY     15
 
 int val_steer;                // steer servo value
 int val_drive;                // drive servo value
@@ -82,6 +80,14 @@ void loop()
     // when we find out sentinal; reset the index
     if (c == -128) idx_buffer = 0;
     else           buffer[idx_buffer++] = c;
+  }
+  else
+
+  // if we somehow have lost connection - revert to center positions
+  if (!ble_connected())
+  {
+    val_steer  = STEER_CENTER;
+    val_drive  = DRIVE_CENTER;
   }
   
   // have we received enough data?
@@ -128,10 +134,9 @@ void loopSteer()
   digitalWrite(STEER_PIN, HIGH);
   delayMicroseconds(val_steer);
   digitalWrite(STEER_PIN, LOW);
-  delay(STEER_DELAY);
-  
-  // let other threads have time to do something
-  yield();
+
+  // let other threads have time to do something (with minimum delay)
+  Scheduler.delay(STEER_DELAY);
 }
 
 void loopDrive()
@@ -140,10 +145,8 @@ void loopDrive()
   digitalWrite(DRIVE_PIN, HIGH);
   delayMicroseconds(val_drive);
   digitalWrite(DRIVE_PIN, LOW);
-  delay(DRIVE_DELAY);
-
-  // let other threads have time to do something
-  yield();
+  
+  // let other threads have time to do something (with minimum delay)
+  Scheduler.delay(DRIVE_DELAY);
 }
-
 
