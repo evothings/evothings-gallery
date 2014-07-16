@@ -1,50 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BLE Car</title>
+	<title>BLE remote control car</title>
 	<meta charset="UTF-8" />
-	<meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
 	<link rel="stylesheet" href="index.css" />
-	<script>
-		if (window.hyper) { console.log = hyper.log; }
-		var controlX = 0,
-		controlY = 0;
-	</script>
+
 	<script src="cordova.js"></script>
 	<script src="libs/jquery-2.1.1.js"></script>
 	<script src="libs/jquery.mobile.custom.js"></script>
 	<script src="libs/thumbstick.js"></script>
 	<script src="libs/easy-ble.js"></script>
 	<script src="app.js"></script>
-	<script>
-	$(document).ready(function() {
-
-		// Create a thumbstick in the canvas.
-		var thumbStick = new ThumbStick('stage')
-		thumbStick.init()
-		$(window).resize(thumbStick.onResizeCanvas.bind(thumbStick))
-
-		thumbStick.onUpdate = function()
-		{
-			controlX = Math.round(-((thumbStick.stick.length * thumbStick.stick.normal.x) / thumbStick.stick.maxLength) * 127)
-			controlY = Math.round(-((thumbStick.stick.length * thumbStick.stick.normal.y) / thumbStick.stick.maxLength) * 127)
-		}
-
-		setInterval(function() {
-			if (app.connected)
-				app.sendData(app.device)
-		}, 50)
-
-	})
-
-	</script>
 </head>
+
 <body>
-	<h1>BLE Car</h1>
-	<div id="info">&nbsp;</div>
-	<button onclick="app.onStartButton()">Start</button>
-	<button onclick="app.onStopButton()">Stop</button>
+	<h1>BLE remote control car</h1>
+	<div align=center id="info">&nbsp;</div>
+	<div id="controls" align=center>
+	<button onclick="app.onStartButton(true)">START</button>
+	<button onclick="app.onStopButton(true)">STOP</button>
+	</div>
 	<div id="canvas_container">
 		<canvas id="stage" width="1024" height="690"></canvas>
 	</div>
