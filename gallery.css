@@ -5,22 +5,16 @@ Author: Eric Svensson
 Copyright (c) 2013-2014 Evothings AB
 */
 
-#page {
-	padding-left: 1.5%;
+body {
+	font-size: 186%;
+	font-size: 5vmin;
 }
 
-#page_top_margin_aspect {
-	display: block;
-	width: 1.5%;
-}
-#page_top_margin_aspect:after {
-	display: block;
-	padding-top: 100%;
-	content: '';
-}
-
-div#intro {
-	padding-bottom: 2%;
+button,
+input.btn-group + label,
+.button {
+	font-family: 'Proxima Nova Regular', sans-serif;
+	font-weight: normal;
 }
 
 #list_item_template { display: none; }
@@ -29,12 +23,16 @@ div#intro {
 	display: none;
 	width: 30%;
 	margin-right: 3%;
-	margin-bottom: 2%;
+	margin-bottom: 4%;
 
 	overflow: hidden;
 	vertical-align: top;
 }
 .list_item.visible { display: inline-block; }
+
+#list {
+	font-size: 63%;
+}
 
 #list
 a.screenshot {
@@ -44,7 +42,8 @@ a.screenshot {
 	width: 100%;
 	margin-bottom: 1.8em;
 
-	border: 1px solid #000;
+	border: none;
+	background: #f3f3f3;
 	border-radius: 5px;
 }
 #list
@@ -82,6 +81,9 @@ a.screenshot img {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	
+	font-family: 'Proxima Nova Bold', sans-serif;
+	color: #000;
+
 	line-height: 2em;
 }
 #list
@@ -109,7 +111,7 @@ a.screenshot:hover .description {
 
 	border: none;
 	border-radius: 3px;
-	background-color: #cdcdcd;
+	background-color: #f3f3f3;
 }
 
 #list
@@ -128,10 +130,16 @@ a.screenshot:hover .description {
 	font-size: 70%;
 	line-height: 2em;
 	vertical-align: middle;
+	color: #fff;
+	text-decoration: none;
+
+}
+#list a.resource:hover {
+	text-decoration: underline;
 }
 
-#list a.resource-YouTube { background: #0f0; }
-#list a.resource-Docs { background: #f00; }
+#list a.resource-YouTube { background: #e15a64; }
+#list a.resource-Docs { background: #ecd53b; }
 
 @media screen and (orientation: landscape) {
 	/* Show three columns */
