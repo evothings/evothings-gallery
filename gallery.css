@@ -6,8 +6,13 @@ Copyright (c) 2013-2014 Evothings AB
 */
 
 body {
+	margin: 0 1em 0 1em;
+
 	font-size: 186%;
-	font-size: 5vmin;
+}
+
+body::before {
+	margin-bottom: 0.5em;
 }
 
 button,
@@ -21,7 +26,7 @@ input.btn-group + label,
 
 .list_item {
 	display: none;
-	width: 30%;
+	width: 10em;
 	margin-right: 3%;
 	margin-bottom: 4%;
 
@@ -141,12 +146,26 @@ a.screenshot:hover .description {
 #list a.resource-YouTube { background: #e15a64; }
 #list a.resource-Docs { background: #ecd53b; }
 
-@media screen and (orientation: landscape) {
+@media  only screen and (-webkit-min-device-pixel-ratio: 2.0),
+		only screen and (min-device-pixel-ratio : 2.0) {
+	body {
+		font-size: 300%;
+		font-size: 7.5vmin;
+	}
+}
+
+@media  screen and (orientation: landscape) and (device-width : 320px) and (-webkit-max-device-pixel-ratio: 2.0),
+		screen and (orientation: landscape) and (device-width : 320px) and (max-device-pixel-ratio : 2.0),
+		screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2.0),
+		screen and (orientation: landscape) and (min-device-pixel-ratio: 2.0) {
 	/* Show three columns */
 	.list_item { width: 30%; }
 }
 
-@media screen and (orientation: portrait) {
-	/* Show two columns */
+@media  screen and (orientation: portrait) and (device-width : 320px) and (-webkit-max-device-pixel-ratio: 2.0),
+		screen and (orientation: portrait) and (device-width : 320px) and (max-device-pixel-ratio : 2.0),
+		screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.0),
+		screen and (orientation: portrait) and (min-device-pixel-ratio: 2.0) {
+	/* Show three columns */
 	.list_item { width: 47%; }
 }
