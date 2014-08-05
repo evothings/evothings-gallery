@@ -2,7 +2,7 @@
 
 The gallery items are currently stored in gallery.json. The following JSON structure serves as an example:
 
-		{
+	{
 		"items": [
 			{
 				"description": "Raspberry Car",
