@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>chdk-remote</title>
+    </head>
+    <body>
+
+        <div data-role="page" id="pageone">
+
+            <div data-role="header">
+                <h1>Remote Shutter</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <p id="info">Initializing...</p>
+                <button id="connectButton" class="ui-btn" onclick="">Connect</button>
+            </div>
+            
+        </div> 
+        
+        <div data-role="page" id="pagetwo">
+
+            <div data-role="header">
+                <h1>Remote Shutter</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+           
+                <div data-role="controlgroup" >
+                    <button class="ui-btn" onclick="buttonTouched(camera.zoomInStep)">Zoom in one step</button>
+                    <button class="ui-btn" onclick="buttonTouched(camera.zoomOutStep)">Zoom out one step</button>
+                    <button class="ui-btn" onclick="buttonTouched(camera.zoomIn)">Zoom in completely</button>
+                    <button class="ui-btn" onclick="buttonTouched(camera.zoomOut)">Zoom out completely</button>
+                </div>
+
+                <button class="ui-btn" onclick="buttonTouched(camera.takePicture)">Take picture</button>
+                <button class="ui-btn" onclick="buttonTouched(app.disconnect)">Disconnect</button>
+
+                </div>
+
+        </div> 
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+
+        <script type="text/javascript" src="js/easy-ble.js"></script>
+        <script type="text/javascript" src="js/arduino-ble.js"></script>
+        <script type="text/javascript">
+        
+            if (window.hyper) console.log = window.hyper.log;
+
+            document.addEventListener("deviceready", onDeviceReady, false);
+            
+            var name = "RemoteShut"
+
+            var camera = {}
+
+            camera.zoomInStep = function() {
+                app.sendCommand(1);
+            }
+
+            camera.zoomOutStep = function() {
+                app.sendCommand(2);
+            }
+
+            camera.takePicture = function() {
+                app.sendCommand(3);
+            }
+
+            camera.zoomIn = function() {
+                app.sendCommand(4);
+            }
+
+            camera.zoomOut = function() {
+                app.sendCommand(5);
+            }
+
+            function buttonTouched(functionToExecute) {
+                vibrate();
+                functionToExecute();
+            }
+            
+            function onDeviceReady() {
+                $("#info").text("");
+                $("#connectButton").attr("onclick", "buttonTouched(app.connect)");
+                console.log("Device ready!");
+            }
+
+            function vibrate() {
+                navigator.notification.vibrate();
+            }
+            
+            // Application object.
+            var app = {}
+
+            // Connected device.
+            app.device = null;
+
+            // Turn on LED.
+            app.sendCommand = function(command)
+            {
+                app.device && app.device.writeDataArray(new Uint8Array([command]));
+                console.log("Sent command " + command); 
+            }
+
+            app.showMessage = function(message)
+            {
+                $("#info").text(message);
+            };
+
+            // Called when BLE and other native functions are available.
+            app.onDeviceReady = function()
+            {
+                app.showMessage("");
+            };
+
+            app.disconnect = function() 
+            {
+                $.mobile.changePage($('#pageone'), {transition:"flip",datadirection:"reverse"});
+                console.log("Disconnecting from " + name + ".");
+                arduinoble.close(); 
+            };
+            app.connect = function()
+            {
+                arduinoble.close();
+
+                app.showMessage("Connecting..."); 
+                console.log("Trying to connect to " + name + ".");
+
+                arduinoble.connect(
+                        function(device)
+                        {
+                        app.showMessage("");
+                            console.log("Connected to " + name + ".");
+                            $.mobile.changePage($('#pagetwo'), {transition:"flip"});
+                            app.device = device;
+                        },
+                        function(errorCode)
+                        {
+                            var errorMessage = "Failed to connect to " + name + "with error code " + errorCode + ".";
+			    			console.log(errorMessage);
+                            app.showMessage(errorMessage);
+                        });
+};
+
+	// Important to reset BLE when page reloads!
+	window.hyper && window.hyper.onReload(function()
+	{
+		arduinoble.close();
+                $.mobile.changePage($('#pageone'), {transition:"flip",datadirection:"reverse"});
+	});
+        </script>
+    </body>
+</html>
