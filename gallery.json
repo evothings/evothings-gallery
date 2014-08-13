@@ -4,7 +4,7 @@
       "description": "Raspberry Car",
       "author": "Evothings",
       "image": "http://evomedia.evothings.com/gallery/raspberry-car/app_screenshot.png",
-      "url": "http://evomedia.evothings.com/gallery/raspberry-car/",
+      "url": "http://evomedia.evothings.com/gallery/raspberry-car/app/",
       "links": {
         "YouTube": "https://www.youtube.com/watch?v=rAHd6haIOQE",
         "Article": "http://evothings.com/controlling-a-toy-car-with-evothings-and-raspberry-pi/"
@@ -12,32 +12,23 @@
       "tags": "raspberrypi"
     },
     {
-      "description": "BLE Discovery",
+      "description": "BLE Car",
       "author": "Evothings",
-      "image": "http://evomedia.evothings.com/doc/images/ble-discovery-screenshot.png",
-      "url": "ble-ti-sensortag.html",
+      "image": "http://evomedia.evothings.com/gallery/ble-car/app_screenshot.png",
+      "url": "http://evomedia.evothings.com/gallery/ble-car/app/",
       "links": {
-        "Docs": "http://evomedia.evothings.com/doc/ble-discovery.html"
+        "YouTube": "https://www.youtube.com/watch?v=OVSyoz736js",
+        "Article": "http://evothings.com/evothings-hacknight-part1/"
       },
       "tags": "example"
     },
     {
-      "description": "BLE TI SensorTag",
+      "description": "Camera Remote",
       "author": "Evothings",
-      "image": "http://evomedia.evothings.com/doc/images/ble-ti-sensortag-screenshot.png",
-      "url": "ble-ti-sensortag.html",
+      "image": "http://evomedia.evothings.com/gallery/ble-camera-remote/app_screenshot.png",
+      "url": "http://evomedia.evothings.com/gallery/ble-camera-remote/app/",
       "links": {
-        "Docs": "http://evomedia.evothings.com/doc/ble-ti-sensortag.html"
-      },
-      "tags": "example"
-    },
-    {
-      "description": "Arduino BLE",
-      "author": "Evothings",
-      "image": "http://evomedia.evothings.com/doc/images/arduino-ble-screenshot.png",
-      "url": "arduino-ble.html",
-      "links": {
-        "Docs": "http://evomedia.evothings.com/doc/arduino-ble.html"
+        "Article": "http://evothings.com/how-to-control-a-compact-camera-with-your-mobile-device"
       },
       "tags": "example"
     }
