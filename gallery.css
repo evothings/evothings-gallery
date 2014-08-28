@@ -15,11 +15,22 @@ body::before {
 	margin-bottom: 0.5em;
 }
 
+/* When viewing inside ETC, remove the header margin. */
+body.etc::before {
+	height: 0;
+	margin-bottom: 0;
+}
+
 button,
 input.btn-group + label,
 .button {
 	font-family: 'Proxima Nova Regular', sans-serif;
 	font-weight: normal;
+}
+
+/* When viewing inside ETC, remove the header. */
+body.etc header {
+	display: none;
 }
 
 #list_item_template { display: none; }
@@ -148,7 +159,9 @@ a.screenshot:hover .description {
 
 @media	only screen and (-webkit-min-device-pixel-ratio: 2.0),
 		only screen and (min-device-pixel-ratio : 2.0) {
-	body {
+	/* Unless viewing inside ETC, where an iOS iframe bug prevents
+		viewport-sized typography, supply some font size rules. */
+	body:not(.etc) {
 		font-size: 300%;
 		font-size: 7.5vmin;
 	}
@@ -166,6 +179,6 @@ a.screenshot:hover .description {
 		screen and (orientation: portrait) and (device-width : 320px) and (max-device-pixel-ratio : 2.0),
 		screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.0),
 		screen and (orientation: portrait) and (min-device-pixel-ratio: 2.0) {
-	/* Show three columns */
+	/* Show two columns */
 	.list_item { width: 47%; }
 }

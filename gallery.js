@@ -7,6 +7,9 @@ Copyright (c) 2013-2014 Evothings AB
 
 ;$(function() {
 
+	if ($.QueryString['etc'])
+		$('body').addClass('etc')
+
 	$.getJSON("gallery.json", function(data) {
 
 		var $list = $("#list")
@@ -41,11 +44,11 @@ Copyright (c) 2013-2014 Evothings AB
 				.attr("id", "")
 				.addClass("visible")
 
-			/*  If supplying the 'etprotocol' querystring, e.g. when
+			/*  If supplying the 'etc' querystring, e.g. when
 				navigating from Evothings Client, change http:// or https:// to
 				evothings:// in the app URL so that the apps open in the
 				Evothings Client app. */
-			if (item.url && $.QueryString["etprotocol"])
+			if (item.url && $.QueryString["etc"])
 				item.url = item.url.replace(/https?:\/\//, 'evothings://')
 
 			$newItem

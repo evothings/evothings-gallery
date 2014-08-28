@@ -3,8 +3,8 @@
     {
       "description": "Raspberry Car",
       "author": "Evothings",
-      "image": "http://evomedia.evothings.com/gallery/raspberry-car/app_screenshot.png",
-      "url": "http://evomedia.evothings.com/gallery/raspberry-car/app/",
+      "image": "raspberry-car/app_screenshot.png",
+      "url": "raspberry-car/app/",
       "links": {
         "YouTube": "https://www.youtube.com/watch?v=rAHd6haIOQE",
         "Article": "http://evothings.com/controlling-a-toy-car-with-evothings-and-raspberry-pi/"
@@ -14,8 +14,8 @@
     {
       "description": "BLE Car",
       "author": "Evothings",
-      "image": "http://evomedia.evothings.com/gallery/ble-car/app_screenshot.png",
-      "url": "http://evomedia.evothings.com/gallery/ble-car/app/",
+      "image": "ble-car/app_screenshot.png",
+      "url": "ble-car/app/",
       "links": {
         "YouTube": "https://www.youtube.com/watch?v=OVSyoz736js",
         "Article": "http://evothings.com/evothings-hacknight-part1/"
@@ -25,8 +25,8 @@
     {
       "description": "Camera Remote",
       "author": "Evothings",
-      "image": "http://evomedia.evothings.com/gallery/ble-camera-remote/app_screenshot.png",
-      "url": "http://evomedia.evothings.com/gallery/ble-camera-remote/app/",
+      "image": "ble-camera-remote/app_screenshot.png",
+      "url": "ble-camera-remote/app/",
       "links": {
         "Article": "http://evothings.com/how-to-control-a-compact-camera-with-your-mobile-device"
       },
