@@ -1,7 +1,8 @@
 {
   "items": [
     {
-      "description": "Raspberry Car",
+      "title": "Raspberry Car",
+      "description": "Using only basic JavaScript code, node.js, socket.io, a Raspberry Pi and simple electronics, we were quickly able to gain control of a cheap radio controlled toy car with the use of our mobile device.",
       "author": "Evothings",
       "image": "raspberry-car/app_screenshot.png",
       "url": "raspberry-car/app/",
@@ -12,7 +13,8 @@
       "tags": "raspberrypi"
     },
     {
-      "description": "BLE Car",
+      "title": "BLE Car",
+      "description": "We hacked a remote control car replacing the radio controls with an Arduino micro controller so we could control the car from our mobile devices instead using low energy Bluetooth for communication.",
       "author": "Evothings",
       "image": "ble-car/app_screenshot.png",
       "url": "ble-car/app/",
@@ -23,7 +25,8 @@
       "tags": "example"
     },
     {
-      "description": "Camera Remote",
+      "title": "Camera Remote",
+      "description": "Controlling a camera from an Arduino micro-controller opens up a world of possibilities from advanced time lapse, to nature shots of shy game, who keeps stealing from the cookie jar to astronomical observations through a telescope-mounted camera.",
       "author": "Evothings",
       "image": "ble-camera-remote/app_screenshot.png",
       "url": "ble-camera-remote/app/",
