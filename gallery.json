@@ -26,7 +26,7 @@
     },
     {
       "title": "Camera Remote",
-      "description": "Controlling a camera from an Arduino micro-controller opens up a world of possibilities from advanced time lapse, to nature shots of shy game, who keeps stealing from the cookie jar to astronomical observations through a telescope-mounted camera.",
+      "description": "Controlling a camera from an Arduino micro-controller opens up a world of possibilities from advanced time lapse, nature shots, catching the cookie jar theif to astronomical photos via a telescope-mounted camera.",
       "author": "Evothings",
       "image": "ble-camera-remote/app_screenshot.png",
       "url": "ble-camera-remote/app/",
