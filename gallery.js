@@ -58,18 +58,16 @@ Copyright (c) 2013-2014 Evothings AB
 						.attr("src", item.image)
 						.attr("alt", item.title)
 						.end()
-					.children("div.title")
-						.text(item.title)
-						.end()
-				
-
-			$newItem
-				.find("p.description")
-				.text(item.description)
-
-			$newItem
+					.end()
+				.children("a.title")
+					.attr("href", item.url)
+					.text(item.title)
+					.end()
+				.children("p.description")
+					.text(item.description)
+					.end()
 				.find(".author")
-				.text(item.author)
+					.text(item.author)
 
 			if (item.links)
 				$.each(item.links, function(resourceKey, resourceVal) {
