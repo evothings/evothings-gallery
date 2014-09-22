@@ -8,11 +8,11 @@ Copyright (c) 2013-2014 Evothings AB
 ;$(function() {
 
 	if ($.QueryString['etc'])
-		$('body').addClass('etc')
+		$('.evo-gallery').addClass('etc')
 
 	$.getJSON("gallery.json", function(data) {
 
-		var $list = $("#list")
+		var $list = $("#evo-gallery-list")
 		var $listItemTemplate = $("#list_item_template")
 		var $resourceTemplate = $("#list_item_template .resource")
 

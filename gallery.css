@@ -5,36 +5,212 @@ Author: Eric Svensson
 Copyright (c) 2013-2014 Evothings AB
 */
 
-body {
+@import 'fonts/ProximaNova.css';
+
+body.evo-gallery {
 	margin: 0 1em 0 1em;
 
+	font-family: 'Proxima Nova Regular', sans-serif;
+	font-weight: normal;
 	font-size: 186%;
 }
+.evo-gallery.webpage {
+	font-family: 'Proxima Nova Regular', sans-serif;
+	font-weight: normal;
+	font-size: 200%;
+}
 
-body::before {
+
+/* Add a top margin to the content corresponding to the height of the header. */
+body.evo-gallery::before {
+	display: block;
+	width: 100%;
+	height: 1.1em; /* Should correspond to header's height. */
 	margin-bottom: 0.5em;
+
+	content: '\0000a0'; /* Non-breaking space (&nbsp;) */
+	font-size: 180%; /* Same as the header's font size. */
+	line-height: 200%; /* Slighly more than the header's line-height. */
+}
+
+/* Add a bottom margin. */
+body.evo-gallery::after {
+	display:block;
+	content: '';
+	height: 1em;
 }
 
 /* When viewing inside ETC, remove the header margin. */
-body.etc::before {
+body.evo-gallery.etc::before {
 	height: 0;
 	margin-bottom: 0;
 }
 
-button,
-input.btn-group + label,
-.button {
+/*  ----------------------------------------------------------
+								HEADER
+	---------------------------------------------------------- */
+
+/* The header's height is determined by the contained text's font size. */
+.evo-gallery
+header {
+	box-sizing: border-box; /* Width & height includes padding & border. */
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	width: 100%;
+	height: 1.1em;
+	
+	/* Left and right margins should correspond to body margins. */
+	margin: 0 0 3.45% 0;
+	/* Left padding should correspond to the back button's width. */
+	padding: 1% 2% 1% 2%;
+
+	font-size: 180%;
+	line-height: 100%;
+	text-align: center;
+	vertical-align: middle;
+
+	background: #f3f3f3;
+
+	z-index: 1000;
+}
+.evo-gallery
+header button {
+	display: block;
+	position: absolute;
+	top: 50%;
+	max-height: 70%;
+
+	margin: 0;
+
+	font-size: 30%;
+
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.evo-gallery
+header button.back {
+	position: absolute;
+	left: 6.25%;
+
+	width: 10%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+
+	/* Font size is percentage of the header's font size. */
+	font-size: 50%;
+	color: #000;
+
+	text-align: left;
+
+	background: none;
+
+	border-radius: 0;
+	border: none;
+
+	box-shadow: none;
+}
+.evo-gallery
+header button.back img {
+	height: 0.5em;
+}
+.evo-gallery
+header img.logotype {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+
+	height: 60%;
+
+	margin: 0 auto;
+
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+/* Put into common styles? */
+.evo-gallery button,
+.evo-gallery input.btn-group + label,
+.evo-gallery .button {
+	display: inline-block;
+	box-sizing: border-box; /* Width & height includes padding & border. */
+
 	font-family: 'Proxima Nova Regular', sans-serif;
 	font-weight: normal;
+	font-size: inherit;
+	line-height: 100%;
+	text-align: center;
+	text-transform: uppercase;
+
+	color: #fff;
+
+	margin: 2% 0 2% 0;
+	padding: 9px 13px 8px 13px;
+
+	border-radius: 4px;
+	border: none;
+
+	box-shadow: none;
+
+	background-color: #b9b9b9; /* Default color: "Charcoal" */
 }
 
 /* When viewing inside ETC, remove the header. */
-body.etc header {
+.evo-gallery.etc header,
+.evo-gallery.webpage header {
 	display: none;
 }
 
+/* Put into common styles? */
+.evo-gallery h1 {
+	padding: 0;
+	margin: 1em 0 0 0;
+
+	font-family: 'Proxima Nova Black';
+	font-size: 100%;
+	line-height: 1.5;
+
+	vertical-align: middle;
+}
+
+/* Put into common styles? */
+.evo-gallery a {
+	color: #52afb8; /* Default color: "Blue Hue" (dark variant) */
+}
+
+/* Put into common styles? */
+.evo-gallery p {
+	margin: 0.4em 0 0.4em 0;
+	padding: 0;
+
+	font-size: 63%;
+	line-height: 1.5;
+}
+
+/* Put into common styles? */
+.evo-gallery strong {
+	font-family: 'Proxima Nova Bold';
+}
+
+/* Put into common styles? */
+.evo-gallery article {
+	display: none;
+	z-index: 2;
+
+	font-size: 100%;
+}
+
+#evo-gallery-list
 #list_item_template { display: none; }
 
+#evo-gallery-list
 .list_item {
 	display: none;
 	width: 10em;
@@ -44,13 +220,14 @@ body.etc header {
 	overflow: hidden;
 	vertical-align: top;
 }
+#evo-gallery-list
 .list_item.visible { display: inline-block; }
 
-#list {
+#evo-gallery-list {
 	font-size: 63%;
 }
 
-#list
+#evo-gallery-list
 a.screenshot {
 	display: block;
 	position: relative;
@@ -62,14 +239,14 @@ a.screenshot {
 	background: #f3f3f3;
 	border-radius: 5px;
 }
-#list
+#evo-gallery-list
 a.screenshot:after {
 	display: block;
 	padding-top: 100%;
 	content: '';
 }
 
-#list
+#evo-gallery-list
 a.screenshot img {
 	display: block;
 	position: absolute;
@@ -83,7 +260,7 @@ a.screenshot img {
 	max-height: 98%;
 }
 
-#list
+#evo-gallery-list
 .description {
 	display: block;
 	position: absolute;
@@ -102,12 +279,12 @@ a.screenshot img {
 
 	line-height: 2em;
 }
-#list
+#evo-gallery-list
 a.screenshot:hover .description {
 	text-decoration: underline;
 }
 
-#list
+#evo-gallery-list
 .author_wrapper {
 	float: right;
 	padding: 0 0.4em;
@@ -130,7 +307,7 @@ a.screenshot:hover .description {
 	background-color: #f3f3f3;
 }
 
-#list
+#evo-gallery-list
 .resource {
 	display: none;
 	float: left;
@@ -150,18 +327,18 @@ a.screenshot:hover .description {
 	text-decoration: none;
 
 }
-#list a.resource:hover {
+#evo-gallery-list a.resource:hover {
 	text-decoration: underline;
 }
 
-#list a.resource-YouTube { background: #e15a64; }
-#list a.resource-Docs { background: #ecd53b; }
+#evo-gallery-list a.resource-YouTube { background: #e15a64; }
+#evo-gallery-list a.resource-Docs { background: #ecd53b; }
 
 @media	only screen and (-webkit-min-device-pixel-ratio: 2.0),
 		only screen and (min-device-pixel-ratio : 2.0) {
 	/* Unless viewing inside ETC, where an iOS iframe bug prevents
 		viewport-sized typography, supply some font size rules. */
-	body:not(.etc) {
+	.evo-gallery:not(.etc):not(.webpage) {
 		font-size: 300%;
 		font-size: 7.5vmin;
 	}
@@ -172,7 +349,7 @@ a.screenshot:hover .description {
 		screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2.0),
 		screen and (orientation: landscape) and (min-device-pixel-ratio: 2.0) {
 	/* Show three columns */
-	.list_item { width: 30%; }
+	#evo-gallery-list .list_item { width: 30%; }
 }
 
 @media	screen and (orientation: portrait) and (device-width : 320px) and (-webkit-max-device-pixel-ratio: 2.0),
@@ -180,5 +357,5 @@ a.screenshot:hover .description {
 		screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.0),
 		screen and (orientation: portrait) and (min-device-pixel-ratio: 2.0) {
 	/* Show two columns */
-	.list_item { width: 47%; }
+	#evo-gallery-list .list_item { width: 47%; }
 }
