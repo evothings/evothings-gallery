@@ -255,13 +255,15 @@ a.screenshot img {
 	left: 1%;
 	right: 1%;
 
-	margin: 0 auto;
+	height: auto;
 	max-width: 98%;
 	max-height: 98%;
+
+	margin: auto;
 }
 
 #evo-gallery-list
-.description {
+.title {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -280,7 +282,7 @@ a.screenshot img {
 	line-height: 2em;
 }
 #evo-gallery-list
-a.screenshot:hover .description {
+a.screenshot:hover .title {
 	text-decoration: underline;
 }
 
@@ -305,6 +307,13 @@ a.screenshot:hover .description {
 	border: none;
 	border-radius: 3px;
 	background-color: #f3f3f3;
+}
+
+#evo-gallery-list
+p.description {
+	clear: both;
+
+	font-size: 70%;
 }
 
 #evo-gallery-list
@@ -349,7 +358,7 @@ a.screenshot:hover .description {
 		screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2.0),
 		screen and (orientation: landscape) and (min-device-pixel-ratio: 2.0) {
 	/* Show three columns */
-	#evo-gallery-list .list_item { width: 30%; }
+	#evo-gallery-list .list_item { width: 47%; }
 }
 
 @media	screen and (orientation: portrait) and (device-width : 320px) and (-webkit-max-device-pixel-ratio: 2.0),

@@ -56,11 +56,16 @@ Copyright (c) 2013-2014 Evothings AB
 					.attr("href", item.url)
 					.children("img")
 						.attr("src", item.image)
-						.attr("alt", item.description)
+						.attr("alt", item.title)
 						.end()
-					.children("div.description")
-						.text(item.description)
+					.children("div.title")
+						.text(item.title)
 						.end()
+				
+
+			$newItem
+				.find("p.description")
+				.text(item.description)
 
 			$newItem
 				.find(".author")
