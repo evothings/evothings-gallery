@@ -28,7 +28,8 @@
       "image": "ble-camera-remote/app_screenshot.png",
       "url": "ble-camera-remote/app/",
       "links": {
-        "Article": "http://evothings.com/how-to-control-a-compact-camera-with-your-mobile-device"
+        "YouTube": "https://www.youtube.com/watch?v=BR1zAzkk_RE",
+        "Article": "http://evothings.com/diy-camera-control-on-your-smartphone-via-an-arduino-uno-ble-shield/"
       },
       "tags": "example"
     }
