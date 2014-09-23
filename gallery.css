@@ -321,7 +321,7 @@ p.tags {
 #evo-gallery-list
 a.resource {
 	display: none;
-	float: left;
+	float: right;
 
 	min-width: 2em;
 
@@ -352,6 +352,7 @@ a.resource {
 #evo-gallery-list a.resource-YouTube,
 #evo-gallery-list a.resource-GitHub,
 #evo-gallery-list a.resource-Docs {
+	float: left;
 	width: 2em;
 	padding: 0;
 	border-radius: 0;
