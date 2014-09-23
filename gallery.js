@@ -66,6 +66,9 @@ Copyright (c) 2013-2014 Evothings AB
 				.children("p.description")
 					.text(item.description)
 					.end()
+				.children("p.tags")
+					.text(item.tags.split(',').join(', #').replace(/^(\S+)/g,'#$1'))
+					.end()
 				.find(".author")
 					.text(item.author)
 
@@ -77,7 +80,7 @@ Copyright (c) 2013-2014 Evothings AB
 							.addClass("resource-" + resourceKey)
 							.attr("href", resourceVal)
 							.text(resourceKey)
-							.show()
+							.css('display', 'inline-block')
 					)
 				})
 		})

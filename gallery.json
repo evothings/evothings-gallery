@@ -8,6 +8,7 @@
       "url": "raspberry-car/app/",
       "links": {
         "YouTube": "https://www.youtube.com/watch?v=rAHd6haIOQE",
+        "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/raspberry-car",
         "Article": "http://evothings.com/controlling-a-toy-car-with-evothings-and-raspberry-pi/"
       },
       "tags": "raspberrypi"
@@ -20,9 +21,10 @@
       "url": "ble-car/app/",
       "links": {
         "YouTube": "https://www.youtube.com/watch?v=OVSyoz736js",
+        "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/ble-car",
         "Article": "http://evothings.com/evothings-hacknight-part1/"
       },
-      "tags": "example"
+      "tags": "example,test"
     },
     {
       "title": "Camera Remote",
@@ -32,6 +34,7 @@
       "url": "ble-camera-remote/app/",
       "links": {
         "YouTube": "https://www.youtube.com/watch?v=BR1zAzkk_RE",
+        "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/ble-camera-remote",
         "Article": "http://evothings.com/diy-camera-control-on-your-smartphone-via-an-arduino-uno-ble-shield/"
       },
       "tags": "example"

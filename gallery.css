@@ -314,17 +314,28 @@ p.description {
 }
 
 #evo-gallery-list
-.resource {
+p.tags {
+	text-align: right;
+}
+
+#evo-gallery-list
+a.resource {
 	display: none;
 	float: left;
+
+	min-width: 2em;
+
 	padding: 0 0.5em;
-	margin: 1% 1% 0 0;
+	margin: 1% 2% 0 0;
 
 	height: 2em;
 
 	border: none;
 	border-radius: 3px;
-	background: #9e9e9e;
+	background-color: #9e9e9e;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
 
 	font-size: 70%;
 	line-height: 2em;
@@ -332,13 +343,24 @@ p.description {
 	color: #fff;
 	text-decoration: none;
 
+	overflow: hidden;
 }
 #evo-gallery-list a.resource:hover {
 	text-decoration: underline;
 }
 
-#evo-gallery-list a.resource-YouTube { background: #e15a64; }
-#evo-gallery-list a.resource-Docs { background: #ecd53b; }
+#evo-gallery-list a.resource-YouTube,
+#evo-gallery-list a.resource-GitHub,
+#evo-gallery-list a.resource-Docs {
+	width: 2em;
+	padding: 0;
+	border-radius: 0;
+	color:transparent;
+	background-color: transparent;
+}
+#evo-gallery-list a.resource-YouTube { background-image: url('gfx/youtube.png'); }
+#evo-gallery-list a.resource-GitHub { background-image: url('gfx/github.png'); }
+#evo-gallery-list a.resource-Docs { background-color: #ecd53b; }
 
 @media	only screen and (-webkit-min-device-pixel-ratio: 2.0),
 		only screen and (min-device-pixel-ratio : 2.0) {
