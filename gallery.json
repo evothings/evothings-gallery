@@ -22,7 +22,8 @@
       "links": {
         "YouTube": "https://www.youtube.com/watch?v=OVSyoz736js",
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/ble-car",
-        "Article": "http://evothings.com/evothings-hacknight-part1/"
+        "Article2": "http://evothings.com/evothings-hacknight-part2/",
+        "Article1": "http://evothings.com/evothings-hacknight-part1/"
       },
       "tags": "arduino,ble,toycar"
     },
