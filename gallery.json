@@ -11,7 +11,7 @@
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/raspberry-car",
         "Article": "http://evothings.com/controlling-a-toy-car-with-evothings-and-raspberry-pi/"
       },
-      "tags": "raspberrypi"
+      "tags": "raspberrypi,wifi,toycar"
     },
     {
       "title": "BLE Car",
@@ -24,7 +24,7 @@
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/ble-car",
         "Article": "http://evothings.com/evothings-hacknight-part1/"
       },
-      "tags": "example,test"
+      "tags": "arduino,ble,toycar"
     },
     {
       "title": "Camera Remote",
@@ -37,7 +37,7 @@
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/ble-camera-remote",
         "Article": "http://evothings.com/diy-camera-control-on-your-smartphone-via-an-arduino-uno-ble-shield/"
       },
-      "tags": "example"
+      "tags": "arduino,ble,camera"
     }
   ]
 }
