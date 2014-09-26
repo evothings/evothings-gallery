@@ -12,7 +12,8 @@ body.evo-gallery {
 
 	font-family: 'Proxima Nova Regular', sans-serif;
 	font-weight: normal;
-	font-size: 186%;
+	font-size: 30px;
+	/*font-size: 8vw;*/
 }
 .evo-gallery.webpage {
 	font-family: 'Proxima Nova Regular', sans-serif;
@@ -213,7 +214,7 @@ header img.logotype {
 #evo-gallery-list
 .list_item {
 	display: none;
-	width: 30%;
+	width: 47%;
 	margin-right: 3%;
 	margin-bottom: 4%;
 
@@ -303,7 +304,6 @@ a.title {
 
 	border: none;
 	border-radius: 3px;
-	background-color: #f3f3f3;
 }
 
 #evo-gallery-list
@@ -373,18 +373,32 @@ a.resource {
 	}
 }
 
-@media	screen and (orientation: landscape) and (device-width : 320px) and (-webkit-max-device-pixel-ratio: 2.0),
-		screen and (orientation: landscape) and (device-width : 320px) and (max-device-pixel-ratio : 2.0),
-		screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2.0),
-		screen and (orientation: landscape) and (min-device-pixel-ratio: 2.0) {
-	/* Show three columns */
+@media	screen and (orientation: landscape) {
+	/* Show two columns */
 	#evo-gallery-list .list_item { width: 47%; }
 }
 
-@media	screen and (orientation: portrait) and (device-width : 320px) and (-webkit-max-device-pixel-ratio: 2.0),
-		screen and (orientation: portrait) and (device-width : 320px) and (max-device-pixel-ratio : 2.0),
-		screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.0),
-		screen and (orientation: portrait) and (min-device-pixel-ratio: 2.0) {
-	/* Show two columns */
-	#evo-gallery-list .list_item { width: 47%; }
+@media	screen and (orientation: portrait) {
+	/* Show one column */
+	#evo-gallery-list .list_item { width: 97%; }
+}
+
+@media	only screen and (min-width : 850px) and (-webkit-max-device-pixel-ratio : 1),
+		only screen and (min-width : 850px) and (max-device-pixel-ratio : 1) {
+	#evo-gallery-list .list_item { width: 30%; } /* Show three columns */
+}
+
+@media	only screen and (min-width : 1290px) and (-webkit-max-device-pixel-ratio : 1),
+		only screen and (min-width : 1290px) and (max-device-pixel-ratio : 1) {
+	#evo-gallery-list .list_item { width: 22%; } /* Show four columns */
+}
+
+@media	only screen and (min-width : 1800px) and (-webkit-max-device-pixel-ratio : 1),
+		only screen and (min-width : 1800px) and (max-device-pixel-ratio : 1) {
+	#evo-gallery-list .list_item { width: 16%; } /* Show five columns */
+}
+
+@media	only screen and (min-width : 2500px) and (-webkit-max-device-pixel-ratio : 1),
+		only screen and (min-width : 2500px) and (max-device-pixel-ratio : 1) {
+	#evo-gallery-list .list_item { width: 11%; } /* Show sevel columns */
 }
