@@ -26,7 +26,17 @@ Copyright (c) 2013-2014 Evothings AB
 	notags = (notagsMatches != null ? notagsMatches[1] : null)
 	notags = ($.QueryString["hidetags"] ? $.QueryString["hidetags"] : notags)
 
-	if ($.QueryString['etc'])
+	var tagURLPrefix = '?showtags='
+	if (!window.location.pathname.match(/gallery.html/))
+		tagURLPrefix = '/gallery/tag/'
+
+	var projectURLPrefix = '?project='
+	if (!window.location.pathname.match(/gallery.html/))
+		projectURLPrefix = '/gallery/project/'
+
+	var etc = $.QueryString['etc']
+	
+	if (etc)
 		$('.evo-gallery').addClass('etc')
 
 	if (project)
@@ -72,9 +82,12 @@ Copyright (c) 2013-2014 Evothings AB
 			if (item.url && $.QueryString["etc"])
 				item.url = item.url.replace(/https?:\/\//, 'evothings://')
 
+			var itemURL = etc ? item.url : projectURLPrefix +
+				item.title.replace(' ', '-')
+
 			$newItem
 				.children("a.screenshot")
-					.attr("href", item.url)
+					.attr("href", itemURL)
 					.children("img")
 						.attr("src", item.image)
 						.attr("alt", item.title)
@@ -90,11 +103,10 @@ Copyright (c) 2013-2014 Evothings AB
 				.find(".author")
 					.text(item.author)
 
-
 			$.each(item.tags.split(','), function( index, value ) {
 				$newItem.children("p.tags").append(
 					(index > 0 ? ', ' : '') + 
-					'<a href="tag/' + value + '">#' + value + '</a>'
+					'<a href="' + tagURLPrefix + value + '">#' + value + '</a>'
 				)
 			})
 
