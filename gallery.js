@@ -9,7 +9,7 @@ Copyright (c) 2013-2014 Evothings AB
 
 	/*  If specified that only a certain project should be shown... */
 	var projectMatches = /project\/(.*)/.exec(window.location.pathname)
-	project = (tagsMatches != null ? tagsMatches[1] : null)
+	project = (projectMatches != null ? projectMatches[1] : null)
 	project = ($.QueryString["project"] ? $.QueryString["project"] : project)
 
 	/*  If specified that only items with certain

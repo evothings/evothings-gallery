@@ -221,12 +221,13 @@ header img.logotype {
 	overflow: hidden;
 	vertical-align: top;
 }
+#evo-gallery-list
+.list_item.visible { display: inline-block; }
+
 /* If viewing single item, show one column. */
 .evo-gallery.single_item #evo-gallery-list .list_item {
 	width: 97% !important;
 }
-#evo-gallery-list
-.list_item.visible { display: inline-block; }
 
 #evo-gallery-list {
 	font-size: 63%;
@@ -238,11 +239,19 @@ a.screenshot {
 	position: relative;
 
 	width: 100%;
+	width: calc(100% - 10px);
 
-	border: none;
 	background: #f3f3f3;
+
+	border: 5px solid #f3f3f3;
 	border-radius: 5px;
+
+	overflow: hidden;
+
+	text-align: center;
 }
+/*  Force a square aspect ratio on the image container so that all items appear
+	the same size despite different image sizes. */
 #evo-gallery-list
 a.screenshot:after {
 	display: block;
@@ -253,6 +262,7 @@ a.screenshot:after {
 #evo-gallery-list
 a.screenshot img {
 	display: block;
+	
 	position: absolute;
 	top: 1%;
 	bottom: 1%;
@@ -264,6 +274,21 @@ a.screenshot img {
 	max-height: 98%;
 
 	margin: auto;
+}
+.evo-gallery.single_item #evo-gallery-list
+a.screenshot {
+	max-height: 20em;
+}
+/* If viewing single item, remove the aspect ratio of the image container. */
+.evo-gallery.single_item #evo-gallery-list
+a.screenshot:after {
+	padding-top: 0;
+}
+/* If viewing single item, make the image affect the size of its container. */
+.evo-gallery.single_item #evo-gallery-list
+a.screenshot img {
+	display: inline-block;
+	position: static;
 }
 
 #evo-gallery-list
