@@ -66,11 +66,16 @@ Copyright (c) 2013-2014 Evothings AB
 				.children("p.description")
 					.text(item.description)
 					.end()
-				.children("p.tags")
-					.text(item.tags.split(',').join(', #').replace(/^(\S+)/g,'#$1'))
-					.end()
 				.find(".author")
 					.text(item.author)
+
+			
+			$.each(item.tags.split(','), function( index, value ) {
+				$newItem.children("p.tags").append(
+					(index > 0 ? ', ' : '') + 
+					'<a href="tag/' + value + '">#' + value + '</a>'
+				)
+			});
 
 			if (item.links)
 				$.each(item.links, function(resourceKey, resourceVal) {
