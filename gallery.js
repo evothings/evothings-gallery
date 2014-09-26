@@ -10,21 +10,21 @@ Copyright (c) 2013-2014 Evothings AB
 	/*  If specified that only a certain project should be shown... */
 	var projectMatches = /project\/(.*)/.exec(window.location.pathname)
 	project = (tagsMatches != null ? tagsMatches[1] : null)
-	project = ($.QueryString["project"] ? $.QueryString["project"] : null)
+	project = ($.QueryString["project"] ? $.QueryString["project"] : project)
 
 	/*  If specified that only items with certain
 		tags should be shown and the current item doesn't contain those
 		tags then continue to the next item. */
 	var tagsMatches = /tag\/(.*)/.exec(window.location.pathname)
 	tags = (tagsMatches != null ? tagsMatches[1] : null)
-	tags = ($.QueryString["showtags"] ? $.QueryString["showtags"] : null)
+	tags = ($.QueryString["showtags"] ? $.QueryString["showtags"] : tags)
 
 	/*  If specified that only items lacking certain
 		tags should be shown and the current item contains one or more
 		of those tags then continue to the next item. */
 	var notagsMatches = /notag\/(.*)/.exec(window.location.pathname)
 	notags = (notagsMatches != null ? notagsMatches[1] : null)
-	notags = ($.QueryString["hidetags"] ? $.QueryString["hidetags"] : null)
+	notags = ($.QueryString["hidetags"] ? $.QueryString["hidetags"] : notags)
 
 	if ($.QueryString['etc'])
 		$('.evo-gallery').addClass('etc')
