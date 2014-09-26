@@ -41,16 +41,28 @@ Copyright (c) 2013-2014 Evothings AB
 
 		<!-- Template element which will be cloned using JavaScript. -->
 		<div id='list_item_template' class='list_item'>
+
 			<a class='screenshot' href=''>
 				<img src='' alt='' />
 			</a>
+
 			<a class='title' href=''></a>
+
 			<span class='author_wrapper'>
 				By <span class='author'></span>
 			</span>
+
 			<p class='description'></p>
+
 			<p class='tags'></p>
-			<a class='button resource' href=''></a>
+
+			<div class='resources'>
+				<a class='button resource' href=''></a>
+				<!-- Keep p.read_more after the resources because CSS rules
+					 depends on it. -->
+				<p class='read_more'>Read more:</p>
+			</div>
+
 		</div>
 
 	</div>

@@ -7,8 +7,30 @@ Copyright (c) 2013-2014 Evothings AB
 
 ;$(function() {
 
+	/*  If specified that only a certain project should be shown... */
+	var projectMatches = /project\/(.*)/.exec(window.location.pathname)
+	project = (tagsMatches != null ? tagsMatches[1] : null)
+	project = ($.QueryString["project"] ? $.QueryString["project"] : null)
+
+	/*  If specified that only items with certain
+		tags should be shown and the current item doesn't contain those
+		tags then continue to the next item. */
+	var tagsMatches = /tag\/(.*)/.exec(window.location.pathname)
+	tags = (tagsMatches != null ? tagsMatches[1] : null)
+	tags = ($.QueryString["showtags"] ? $.QueryString["showtags"] : null)
+
+	/*  If specified that only items lacking certain
+		tags should be shown and the current item contains one or more
+		of those tags then continue to the next item. */
+	var notagsMatches = /notag\/(.*)/.exec(window.location.pathname)
+	notags = (notagsMatches != null ? notagsMatches[1] : null)
+	notags = ($.QueryString["hidetags"] ? $.QueryString["hidetags"] : null)
+
 	if ($.QueryString['etc'])
 		$('.evo-gallery').addClass('etc')
+
+	if (project)
+		$('.evo-gallery').addClass('single_item')
 
 	$.getJSON("gallery.json", function(data) {
 
@@ -18,23 +40,22 @@ Copyright (c) 2013-2014 Evothings AB
 
 		$.each(data.items, function(key, item) {
 
-			/*  If the query string specifies that only items with certain
-				tags should be shown and the current item doesn't contain those
-				tags then continue to the next item. */
-			if (item.tags && $.QueryString["showtags"] &&
+			if (item.title && project &&
+				item.title.toLowerCase() !=
+					project.replace('-', ' ').toLowerCase())
+				return true // same as 'break' in a native JS loop
+
+			if (item.tags && tags &&
 				($.arrayIntersect(
 					item.tags.split(','),
-					$.QueryString["showtags"].split(','))
+					tags.split(','))
 				).length == 0)
 				return true // same as 'continue' in a native JS loop
 
-			/*  If the query string specifies that only items lacking certain
-				tags should be shown and the current item contains one or more
-				of those tags then continue to the next item. */
-			if (item.tags && $.QueryString["hidetags"] &&
+			if (item.tags && notags &&
 				($.arrayIntersect(
 					item.tags.split(','),
-					$.QueryString["hidetags"].split(','))
+					notags.split(','))
 				).length > 0)
 				return true // same as 'continue' in a native JS loop
 
@@ -69,25 +90,28 @@ Copyright (c) 2013-2014 Evothings AB
 				.find(".author")
 					.text(item.author)
 
-			
+
 			$.each(item.tags.split(','), function( index, value ) {
 				$newItem.children("p.tags").append(
 					(index > 0 ? ', ' : '') + 
 					'<a href="tag/' + value + '">#' + value + '</a>'
 				)
-			});
+			})
 
-			if (item.links)
+			if (item.links) {
+				$firstItem = $('.resource', $newItem)
 				$.each(item.links, function(resourceKey, resourceVal) {
-					$newItem.append(
+					$firstItem.before(
 						$resourceTemplate
 							.clone()
 							.addClass("resource-" + resourceKey)
 							.attr("href", resourceVal)
 							.text(resourceKey)
-							.css('display', 'inline-block')
+							.show()
 					)
 				})
+				$firstItem.remove()
+			}
 		})
 
 	}).fail(function() {

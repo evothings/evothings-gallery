@@ -13,7 +13,7 @@ body.evo-gallery {
 	font-family: 'Proxima Nova Regular', sans-serif;
 	font-weight: normal;
 	font-size: 30px;
-	/*font-size: 8vw;*/
+	/* Specify any viewport-relative font size in a media query below! */
 }
 .evo-gallery.webpage {
 	font-family: 'Proxima Nova Regular', sans-serif;
@@ -221,6 +221,10 @@ header img.logotype {
 	overflow: hidden;
 	vertical-align: top;
 }
+/* If viewing single item, show one column. */
+.evo-gallery.single_item #evo-gallery-list .list_item {
+	width: 97% !important;
+}
 #evo-gallery-list
 .list_item.visible { display: inline-block; }
 
@@ -318,6 +322,12 @@ p.tags {
 	text-align: right;
 }
 
+div.resources {
+	position: relative;
+	width: 100%;
+	font-size: inherit;
+}
+
 #evo-gallery-list
 a.resource {
 	display: none;
@@ -326,9 +336,7 @@ a.resource {
 	min-width: 2em;
 
 	padding: 0 0.5em;
-	margin: 1% 2% 0 0;
-
-	height: 2em;
+	margin: 1.3em 0 0 2%;
 
 	border: none;
 	border-radius: 3px;
@@ -338,13 +346,14 @@ a.resource {
 	background-size: contain;
 
 	font-size: 70%;
-	line-height: 2em;
+	line-height: 2;
 	vertical-align: middle;
 	color: #fff;
 	text-decoration: none;
 
 	overflow: hidden;
 }
+
 #evo-gallery-list a.resource:hover {
 	text-decoration: underline;
 }
@@ -353,15 +362,40 @@ a.resource {
 #evo-gallery-list a.resource-GitHub,
 #evo-gallery-list a.resource-Docs {
 	float: left;
+	clear: none;
+
 	width: 2em;
+	height: 2em;
+
 	padding: 0;
+	margin-top: 1%;
+	
 	border-radius: 0;
+	
 	color:transparent;
+	
 	background-color: transparent;
 }
 #evo-gallery-list a.resource-YouTube { background-image: url('gfx/youtube.png'); }
 #evo-gallery-list a.resource-GitHub { background-image: url('gfx/github.png'); }
 #evo-gallery-list a.resource-Docs { background-color: #ecd53b; }
+
+#evo-gallery-list
+p.read_more {
+	display: none;
+	clear: both;
+	text-align: right;
+}
+
+/* If there is a textual a.resource element, show the 'Read more' text. */
+#evo-gallery-list
+a.resource:not(.resource-YouTube):not(.resource-GitHub):not(.resource-Docs)
+~ p.read_more {
+	display: block;
+	position: absolute;
+	top: -0.5em; right: 0;
+}
+
 
 @media	only screen and (-webkit-min-device-pixel-ratio: 2.0),
 		only screen and (min-device-pixel-ratio : 2.0) {
@@ -384,21 +418,29 @@ a.resource {
 }
 
 @media	only screen and (min-width : 850px) and (-webkit-max-device-pixel-ratio : 1),
-		only screen and (min-width : 850px) and (max-device-pixel-ratio : 1) {
+		only screen and (min-width : 850px) and (max-device-pixel-ratio : 1),
+		only screen and (min-width : 850px) and (min--moz-device-pixel-ratio: 1) {
+	.evo-gallery:not(.webpage)
 	#evo-gallery-list .list_item { width: 30%; } /* Show three columns */
 }
 
 @media	only screen and (min-width : 1290px) and (-webkit-max-device-pixel-ratio : 1),
-		only screen and (min-width : 1290px) and (max-device-pixel-ratio : 1) {
+		only screen and (min-width : 1290px) and (max-device-pixel-ratio : 1),
+		only screen and (min-width : 1290px) and (min--moz-device-pixel-ratio: 1) {
+	.evo-gallery:not(.webpage)
 	#evo-gallery-list .list_item { width: 22%; } /* Show four columns */
 }
 
 @media	only screen and (min-width : 1800px) and (-webkit-max-device-pixel-ratio : 1),
-		only screen and (min-width : 1800px) and (max-device-pixel-ratio : 1) {
+		only screen and (min-width : 1800px) and (max-device-pixel-ratio : 1),
+		only screen and (min-width : 1800px) and (min--moz-device-pixel-ratio: 1) {
+	.evo-gallery:not(.webpage)
 	#evo-gallery-list .list_item { width: 16%; } /* Show five columns */
 }
 
 @media	only screen and (min-width : 2500px) and (-webkit-max-device-pixel-ratio : 1),
-		only screen and (min-width : 2500px) and (max-device-pixel-ratio : 1) {
+		only screen and (min-width : 2500px) and (max-device-pixel-ratio : 1),
+		only screen and (min-width : 2500px) and (min--moz-device-pixel-ratio: 1) {
+	.evo-gallery:not(.webpage)
 	#evo-gallery-list .list_item { width: 11%; } /* Show sevel columns */
 }
