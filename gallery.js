@@ -5,7 +5,8 @@ Author: Eric Svensson
 Copyright (c) 2013-2014 Evothings AB
 */
 
-;$(function() {
+;$(function()
+{
 
 	/*  If specified that only a certain project should be shown... */
 	var projectMatches = /project\/(.*)/.exec(window.location.pathname)
@@ -26,6 +27,8 @@ Copyright (c) 2013-2014 Evothings AB
 	notags = (notagsMatches != null ? notagsMatches[1] : null)
 	notags = ($.QueryString["hidetags"] ? $.QueryString["hidetags"] : notags)
 
+	/*  On the website the tag and project filter URLs are made like paths,
+		while in the app they're made like query strings. */
 	var tagURLPrefix = '?showtags='
 	if (!window.location.pathname.match(/gallery.html/))
 		tagURLPrefix = '/gallery/tag/'
@@ -34,6 +37,8 @@ Copyright (c) 2013-2014 Evothings AB
 	if (!window.location.pathname.match(/gallery.html/))
 		projectURLPrefix = '/gallery/project/'
 
+	/*  When accessed through Evothings Client, the 'etc' query string is
+		provided. */
 	var etc = $.QueryString['etc']
 	
 	if (etc)
@@ -48,7 +53,8 @@ Copyright (c) 2013-2014 Evothings AB
 		var $listItemTemplate = $("#list_item_template")
 		var $resourceTemplate = $("#list_item_template .resource")
 
-		$.each(data.items, function(key, item) {
+		$.each(data.items, function(key, item)
+		{
 
 			if (item.title && project &&
 				item.title.toLowerCase() !=
@@ -103,16 +109,19 @@ Copyright (c) 2013-2014 Evothings AB
 				.find(".author")
 					.text(item.author)
 
-			$.each(item.tags.split(','), function( index, value ) {
+			$.each(item.tags.split(','), function( index, value )
+			{
 				$newItem.children("p.tags").append(
 					(index > 0 ? ', ' : '') + 
 					'<a href="' + tagURLPrefix + value + '">#' + value + '</a>'
 				)
 			})
 
-			if (item.links) {
+			if (item.links)
+			{
 				$firstItem = $('.resource', $newItem)
-				$.each(item.links, function(resourceKey, resourceVal) {
+				$.each(item.links, function(resourceKey, resourceVal)
+				{
 					$firstItem.before(
 						$resourceTemplate
 							.clone()
@@ -136,7 +145,8 @@ Copyright (c) 2013-2014 Evothings AB
    Usage example: get the query string parameter named "param" through
    $.QueryString["param"] */
 ;(function($) {
-	$.QueryString = (function(a) {
+	$.QueryString = (function(a)
+	{
 		if (a == "") return {}
 		var b = {}
 		for (var i = 0; i < a.length; ++i)
@@ -153,6 +163,10 @@ Copyright (c) 2013-2014 Evothings AB
 ;(function($) {
 	$.arrayIntersect = function(a, b)
 	{
+		/* Make array values lowercase to perform case-insensitive intersection. */
+		a = a.map(function (value) { console.log(value);return value.toLowerCase() })
+		b = b.map(function (value) { console.log(value);return value.toLowerCase() })
+
 		return $.grep(a, function(i)
 		{
 			return $.inArray(i, b) > -1
