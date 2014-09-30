@@ -18,6 +18,12 @@ Copyright (c) 2013-2014 Evothings AB
 	<script src='libs/jquery-2.1.1.js'></script>
 	<script src='gallery.js'></script>
 
+	<script>
+		window.___gcfg = {
+			parsetags: 'explicit'
+		};
+	</script>
+
 	<style>
 		@import 'gallery.css';
 	</style>
@@ -25,6 +31,15 @@ Copyright (c) 2013-2014 Evothings AB
 </head>
 
 <body class='evo-gallery'>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 	<header>
 
@@ -63,6 +78,24 @@ Copyright (c) 2013-2014 Evothings AB
 				<p class='read_more'>Read more:</p>
 			</div>
 
+			<div class='share'>
+
+				<div class="fb-like"
+					data-layout="button_count" data-action="like"
+					data-show-faces="false" data-share="false"></div>
+
+				<!--<script class='linkedin-share' type="IN/Share"
+					data-counter="right"></script>-->
+
+				<a href="https://twitter.com/share"
+					class="twitter-share-button"
+					data-via="evothings" data-hashtags="iot">Tweet</a>
+
+				<div class="g-plus" data-action="share"
+					data-annotation="bubble"></div>
+
+			</div>
+
 		</div>
 
 	</div>
@@ -77,6 +110,15 @@ Copyright (c) 2013-2014 Evothings AB
 			your enterprise. Or it could just give you a lot of fun!</p>
 
 	</article>
+
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<script src="https://apis.google.com/js/platform.js" async defer>
+		{lang: 'sv'}
+	</script>
+
+	<!--<script src="//platform.linkedin.com/in.js"
+		type="text/javascript">lang: en_US</script>-->
 
 </body>
 

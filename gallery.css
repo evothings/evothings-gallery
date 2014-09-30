@@ -421,6 +421,42 @@ a.resource:not(.resource-YouTube):not(.resource-GitHub):not(.resource-Docs)
 	top: -0.5em; right: 0;
 }
 
+#evo-gallery-list
+div.share {
+	display: none;
+	clear: both;
+	width: 100%;
+	padding-top: 3%;
+	font-size: 1px;
+}
+.evo-gallery.single_item.webpage #evo-gallery-list
+div.share {
+	display: block;
+}
+
+#evo-gallery-list
+div.share * {
+	vertical-align: baseline !important;
+}
+
+#evo-gallery-list
+.fb-like {
+	display: inline-block !important;
+	position: static !important;
+
+	width: auto !important;
+	margin-right: 5px;
+}
+
+#evo-gallery-list
+.IN-widget {
+	margin: 0 4px 0 5px;
+}
+
+#evo-gallery-list
+.twitter-share-button {
+	width: 85px !important;
+}
 
 @media	only screen and (-webkit-min-device-pixel-ratio: 2.0),
 		only screen and (min-device-pixel-ratio : 2.0) {

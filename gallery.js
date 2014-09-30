@@ -5,6 +5,9 @@ Author: Eric Svensson
 Copyright (c) 2013-2014 Evothings AB
 */
 
+var galleryURLBase = 'http://evothings.com/gallery',
+	shareProjectURLBase = '/project/'
+
 ;$(function()
 {
 
@@ -133,7 +136,19 @@ Copyright (c) 2013-2014 Evothings AB
 				})
 				$firstItem.remove()
 			}
+
+			var shareURL = galleryURLBase + shareProjectURLBase +
+				item.title.replace(' ', '-')
+
+			$('.twitter-share-button').attr('data-url', shareURL )
+			$('.fb-like').attr('data-href', shareURL )
+			$('g-plus').attr('data-href', shareURL)
+			//$('.linkedin-share').attr('data-url', shareURL )
+
 		})
+
+		gapi.plus.go()
+		//IN.init()
 
 	}).fail(function() {
 		alert('Failed to load gallery.')
