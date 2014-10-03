@@ -60,7 +60,7 @@ window.___gcfg = {
 		$('.evo-gallery').addClass('single_item')
 
 	$('#clear_filter_button').click(function() {
-		window.location.href = galleryURLBase
+		window.location.href = galleryURLBase + (etc ? '?etc=1' : '')
 	})
 
 	if (project || tags || notags) {
@@ -142,7 +142,8 @@ window.___gcfg = {
 			{
 				$newItem.children("p.tags").append(
 					(index > 0 ? ', ' : '') + 
-					'<a href="' + tagURLPrefix + value + '">#' + value + '</a>'
+					'<a href="' + tagURLPrefix + value +
+					(etc ? '&etc=1' : '') + '">#' + value + '</a>'
 				)
 			})
 
