@@ -8,6 +8,10 @@ Copyright (c) 2013-2014 Evothings AB
 var galleryURLBase = 'http://evothings.com/gallery',
 	shareProjectURLBase = '/project/'
 
+window.___gcfg = {
+	parsetags: 'explicit'
+};
+
 ;$(function()
 {
 
@@ -36,6 +40,8 @@ var galleryURLBase = 'http://evothings.com/gallery',
 	if (!window.location.pathname.match(/gallery.html/))
 		tagURLPrefix = '/gallery/tag/'
 
+	/*  On the website the project filter URLs are made like paths, while in
+		the app they're made like query strings. */
 	var projectURLPrefix = '?project='
 	if (!window.location.pathname.match(/gallery.html/))
 		projectURLPrefix = '/gallery/project/'
@@ -59,11 +65,13 @@ var galleryURLBase = 'http://evothings.com/gallery',
 		$.each(data.items, function(key, item)
 		{
 
+			/* If current item doesn't match project filter, skip it. */
 			if (item.title && project &&
 				item.title.toLowerCase() !=
 					project.replace('-', ' ').toLowerCase())
-				return true // same as 'break' in a native JS loop
+				return true // same as 'continue' in a native JS loop
 
+			/* If current item doesn't match tag filter, skip it. */
 			if (item.tags && tags &&
 				($.arrayIntersect(
 					item.tags.split(','),
@@ -71,6 +79,7 @@ var galleryURLBase = 'http://evothings.com/gallery',
 				).length == 0)
 				return true // same as 'continue' in a native JS loop
 
+			/* If current item matches tag exclusion filter, skip it. */
 			if (item.tags && notags &&
 				($.arrayIntersect(
 					item.tags.split(','),
@@ -78,6 +87,8 @@ var galleryURLBase = 'http://evothings.com/gallery',
 				).length > 0)
 				return true // same as 'continue' in a native JS loop
 
+			/*  Clone the HTML template for a gallery item, change its id and
+				show it. */
 			var $newItem = $listItemTemplate
 				.clone()
 				.appendTo($list)
