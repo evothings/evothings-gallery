@@ -296,6 +296,10 @@ a.title {
 	display: block;
 	float: left;
 
+	max-width: 100%;
+
+	padding-top: 0.5em;
+
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -303,7 +307,7 @@ a.title {
 	font-family: 'Proxima Nova Bold', sans-serif;
 	color: #000;
 
-	line-height: 2em;
+	line-height: 1;
 
 	text-decoration: none;
 }
@@ -338,6 +342,8 @@ a.title {
 #evo-gallery-list
 p.description {
 	clear: both;
+
+	padding-top: 0.5em;
 
 	font-size: 70%;
 }
