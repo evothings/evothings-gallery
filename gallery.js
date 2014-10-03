@@ -5,8 +5,11 @@ Author: Eric Svensson
 Copyright (c) 2013-2014 Evothings AB
 */
 
-var galleryURLBase = 'http://evothings.com/gallery',
-	shareProjectURLBase = '/project/'
+var galleryURLBase = 'http://evothings.com/gallery'
+	if (window.location.pathname.match(/gallery.html/))
+		galleryURLBase = 'gallery.html'
+
+var shareProjectURLBase = 'http://evothings.com/gallery/project/'
 
 window.___gcfg = {
 	parsetags: 'explicit'
@@ -55,6 +58,13 @@ window.___gcfg = {
 
 	if (project)
 		$('.evo-gallery').addClass('single_item')
+
+	$('#clear_filter_button').click(function() {
+		window.location.href = galleryURLBase
+	})
+
+	if (project || tags || notags)
+		$('#clear_filter_button').show()
 
 	$.getJSON("gallery.json", function(data) {
 
@@ -148,7 +158,7 @@ window.___gcfg = {
 				$firstItem.remove()
 			}
 
-			var shareURL = galleryURLBase + shareProjectURLBase +
+			var shareURL = shareProjectURLBase +
 				item.title.replace(' ', '-')
 
 			$('.twitter-share-button').attr('data-url', shareURL )
