@@ -63,8 +63,13 @@ window.___gcfg = {
 		window.location.href = galleryURLBase
 	})
 
-	if (project || tags || notags)
-		$('#clear_filter_button').show()
+	if (project || tags || notags) {
+		$('#clear_filter_button').addClass('visible')
+		if (tags) {
+			$('#filter_indicator').addClass('visible')
+			$('#filter_indicator span').text('#' + tags)
+		}
+	}
 
 	$.getJSON("gallery.json", function(data) {
 

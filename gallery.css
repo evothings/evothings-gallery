@@ -51,6 +51,12 @@ body.evo-gallery.etc::before {
 								HEADER
 	---------------------------------------------------------- */
 
+/* When viewing inside ETC, remove the header. */
+.evo-gallery.etc header,
+.evo-gallery.webpage header {
+	display: none;
+}
+
 /* The header's height is determined by the contained text's font size. */
 .evo-gallery
 header {
@@ -136,6 +142,10 @@ header img.logotype {
 	transform: translateY(-50%);
 }
 
+/*  ----------------------------------------------------------
+				BUTTON RULES (from evothings-app.css)
+	---------------------------------------------------------- */
+
 /* Put into common styles? */
 .evo-gallery button,
 .evo-gallery .button {
@@ -161,8 +171,8 @@ header img.logotype {
 
 	background-color: #b9b9b9; /* Default color: "Charcoal" */
 }
-
-.evo-gallery button:active, button.pressed {
+.evo-gallery button:active,
+.evo-gallery button.pressed {
 	box-shadow: inset 0 8px 9px -9px #000;
 	background-color: #9d9d9d; /* Default color: "Charcoal" */
 }
@@ -173,11 +183,9 @@ header img.logotype {
 	background: #b9b9b9;
 }
 
-/* When viewing inside ETC, remove the header. */
-.evo-gallery.etc header,
-.evo-gallery.webpage header {
-	display: none;
-}
+/*  ----------------------------------------------------------
+							TEXT STYLES
+	---------------------------------------------------------- */
 
 /* Put into common styles? */
 .evo-gallery h1 {
@@ -219,10 +227,35 @@ header img.logotype {
 }
 
 .evo-gallery
+#filter_indicator {
+	display: none;
+	font-size: 63%;
+	text-decoration: underline;
+}
+.evo-gallery
+#filter_indicator.visible {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.evo-gallery
 #clear_filter_button {
 	display: none;
-	clear: both;
+	
 	font-size: 40%;
+}
+.evo-gallery
+#clear_filter_button.visible {
+	display: inline-block;
+}
+
+/*  ----------------------------------------------------------
+						GALLERY ITEM LIST
+	---------------------------------------------------------- */
+
+#evo-gallery-list {
+	clear: both;
+	font-size: 63%;
 }
 
 #evo-gallery-list
@@ -244,10 +277,6 @@ header img.logotype {
 /* If viewing single item, show one column. */
 .evo-gallery.single_item #evo-gallery-list .list_item {
 	width: 97% !important;
-}
-
-#evo-gallery-list {
-	font-size: 63%;
 }
 
 #evo-gallery-list
@@ -480,6 +509,10 @@ div.share * {
 .twitter-share-button {
 	width: 85px !important;
 }
+
+/*  ----------------------------------------------------------
+							MEDIA QUERIES
+	---------------------------------------------------------- */
 
 @media	only screen and (-webkit-min-device-pixel-ratio: 2.0),
 		only screen and (min-device-pixel-ratio : 2.0) {
