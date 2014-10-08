@@ -58,7 +58,7 @@
       "description": "With the use of an Electric Imp, a simple electronic circuit and a simple mobile application developed with Evothings Studio, we can remotely call the elevator and unlock its doors.",
       "author": "Eric Svensson",
       "image": "elevator-remote-control/app_photo.jpg",
-      "url": "elevator-remote-control/index.html",
+      "url": "elevator-remote-control/app/index.html",
       "links": {
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/elevator-remote-control",
         "Article": "http://evothings.com/how-to-make-an-app-for-remote-controlling-an-elevator-part-1"
