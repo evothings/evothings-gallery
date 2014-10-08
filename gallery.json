@@ -4,8 +4,8 @@
       "title": "Raspberry Car",
       "description": "Using only basic JavaScript code, node.js, socket.io, a Raspberry Pi and simple electronics, we were quickly able to gain control of a cheap radio controlled toy car with the use of our mobile device.",
       "author": "Eric Svensson",
-      "image": "raspberry-car/app_screenshot.png",
-      "url": "raspberry-car/app/",
+      "image": "raspberry-car/app_photo.jpg",
+      "url": "raspberry-car/app/index.html",
       "links": {
         "YouTube": "https://www.youtube.com/watch?v=rAHd6haIOQE",
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/raspberry-car",
@@ -17,8 +17,8 @@
       "title": "BLE Car",
       "description": "We hacked a remote control car replacing the radio controls with an Arduino micro controller so we could control the car from our mobile devices instead using low energy Bluetooth for communication.",
       "author": "Aaron Ardiri",
-      "image": "ble-car/app_screenshot.png",
-      "url": "ble-car/app/",
+      "image": "ble-car/app_photo.jpg",
+      "url": "ble-car/app/index.html",
       "links": {
         "YouTube": "https://www.youtube.com/watch?v=OVSyoz736js",
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/ble-car",
@@ -31,12 +31,37 @@
       "title": "Camera Remote",
       "description": "Controlling a camera from an Arduino micro-controller opens up a world of possibilities from advanced time lapse, nature shots, catching the cookie jar theif to astronomical photos via a telescope-mounted camera.",
       "author": "Andreas Lundquist",
-      "image": "ble-camera-remote/app_screenshot.png",
-      "url": "ble-camera-remote/app/",
+      "image": "ble-camera-remote/app_photo.jpg",
+      "url": "ble-camera-remote/app/index.html",
       "links": {
         "YouTube": "https://www.youtube.com/watch?v=BR1zAzkk_RE",
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/ble-camera-remote",
         "Article": "http://evothings.com/diy-camera-control-on-your-smartphone-via-an-arduino-uno-ble-shield/"
+      },
+      "tags": "arduino,ble,camera"
+    },
+    {
+      "title": "TI SensorTag Demo",
+      "description": "",
+      "author": "Mikael Kindborg",
+      "image": "ti-sensortag-demo/app_photo.jpg",
+      "url": "ti-sensortag-demo/index.html",
+      "links": {
+        "YouTube": "https://www.youtube.com/watch?v=MOwbACSEhos",
+        "GitHub" : "https://github.com/divineprog/evo-demos/tree/master/Demos2014/TISensorTag",
+        "Guide": "http://evothings.com/quick-guide-to-making-a-mobile-app-for-the-ti-sensortag-using-javascript/"
+      },
+      "tags": "arduino,ble,camera"
+    },
+    {
+      "title": "Elevator Remote Control",
+      "description": "",
+      "author": "Eric Svensson",
+      "image": "elevator-remote-control/app_photo.jpg",
+      "url": "elevator-remote-control/index.html",
+      "links": {
+        "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/elevator-remote-control",
+        "Article": "http://evothings.com/how-to-make-an-app-for-remote-controlling-an-elevator-part-1"
       },
       "tags": "arduino,ble,camera"
     }
