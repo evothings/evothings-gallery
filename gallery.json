@@ -42,7 +42,7 @@
     },
     {
       "title": "TI SensorTag Demo",
-      "description": "",
+      "description": "The app connects to the closest SensorTag when started and displays readings for the different sensors. You can modify this example to do something interesting with the sensor values. ",
       "author": "Mikael Kindborg",
       "image": "ti-sensortag-demo/app_photo.jpg",
       "url": "ti-sensortag-demo/index.html",
@@ -62,6 +62,19 @@
       "links": {
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/elevator-remote-control",
         "Article": "http://evothings.com/how-to-make-an-app-for-remote-controlling-an-elevator-part-1"
+      },
+      "tags": "arduino,ble,camera"
+    },
+    {
+      "title": "Elevator Remote Control",
+      "description": "",
+      "author": "Eric Svensson",
+      "image": "elevator-remote-control/app_photo.jpg",
+      "url": "elevator-remote-control/index.html",
+      "links": {
+        "YouTube" : "https://www.youtube.com/watch?v=Cxd0OS1FNsc",
+        "GitHub" : "https://github.com/divineprog/evo-demos/tree/master/Demos2014/MagicStone",
+        "Article": "http://evothings.com/magic-stone-make-mobile-iot-applications-using-the-ti-sensortag-in-javascript/"
       },
       "tags": "arduino,ble,camera"
     }
