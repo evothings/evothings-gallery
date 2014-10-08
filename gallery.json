@@ -51,11 +51,11 @@
         "GitHub" : "https://github.com/divineprog/evo-demos/tree/master/Demos2014/TISensorTag",
         "Guide": "http://evothings.com/quick-guide-to-making-a-mobile-app-for-the-ti-sensortag-using-javascript/"
       },
-      "tags": "arduino,ble,camera"
+      "tags": "sensortag,ble"
     },
     {
       "title": "Elevator Remote Control",
-      "description": "",
+      "description": "With the use of an Electric Imp, a simple electronic circuit and a simple mobile application developed with Evothings Studio, we can remotely call the elevator and unlock its doors.",
       "author": "Eric Svensson",
       "image": "elevator-remote-control/app_photo.jpg",
       "url": "elevator-remote-control/index.html",
@@ -63,20 +63,20 @@
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/elevator-remote-control",
         "Article": "http://evothings.com/how-to-make-an-app-for-remote-controlling-an-elevator-part-1"
       },
-      "tags": "arduino,ble,camera"
+      "tags": "electricimp,relay,elevator"
     },
     {
-      "title": "Elevator Remote Control",
-      "description": "",
-      "author": "Eric Svensson",
-      "image": "elevator-remote-control/app_photo.jpg",
-      "url": "elevator-remote-control/index.html",
+      "title": "Magic Stone",
+      "description": "The app itself is a modification of the Texas Instruments TI SensorTag example app that comes with Evothings Studio. The accelerometer of the TI SensorTag is used to move an object on the screen.",
+      "author": "Mikael Kindborg",
+      "image": "magic-stone/app_photo.jpg",
+      "url": "magic-stone/index.html",
       "links": {
         "YouTube" : "https://www.youtube.com/watch?v=Cxd0OS1FNsc",
         "GitHub" : "https://github.com/divineprog/evo-demos/tree/master/Demos2014/MagicStone",
         "Article": "http://evothings.com/magic-stone-make-mobile-iot-applications-using-the-ti-sensortag-in-javascript/"
       },
-      "tags": "arduino,ble,camera"
+      "tags": "sensortag"
     }
   ]
 }
