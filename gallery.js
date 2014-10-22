@@ -84,7 +84,7 @@ window.___gcfg = {
 			/* If current item doesn't match project filter, skip it. */
 			if (item.title && project &&
 				item.title.toLowerCase() !=
-					project.replace('-', ' ').toLowerCase())
+					project.replace(/\-/g, ' ').toLowerCase())
 				return true // same as 'continue' in a native JS loop
 
 			/* If current item doesn't match tag filter, skip it. */
@@ -119,7 +119,7 @@ window.___gcfg = {
 				item.url = item.url.replace(/https?:\/\//, 'evothings://')
 
 			var itemURL = etc ? item.url : projectURLPrefix +
-				item.title.replace(' ', '-')
+				item.title.replace(/ /g, '-')
 
 			$newItem
 				.children("a.screenshot")
@@ -166,7 +166,7 @@ window.___gcfg = {
 			}
 
 			var shareURL = shareProjectURLBase +
-				item.title.replace(' ', '-')
+				item.title.replace(/ /g, '-')
 
 			$('.twitter-share-button').attr('data-url', shareURL )
 			$('.fb-like').attr('data-href', shareURL )
