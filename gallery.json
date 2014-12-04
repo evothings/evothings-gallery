@@ -11,7 +11,7 @@
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/raspberry-car",
         "Article": "http://evothings.com/controlling-a-toy-car-with-evothings-and-raspberry-pi/"
       },
-      "tags": "raspberrypi,wifi,toycar"
+      "tags": "raspberrypi,wifi"
     },
     {
       "title": "BLE Car",
@@ -25,7 +25,7 @@
         "Article2": "http://evothings.com/evothings-hacknight-part2/",
         "Article1": "http://evothings.com/evothings-hacknight-part1/"
       },
-      "tags": "arduino,ble,toycar"
+      "tags": "arduino,ble,redbearlabs"
     },
     {
       "title": "Camera Remote",
@@ -38,7 +38,7 @@
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/ble-camera-remote",
         "Article": "http://evothings.com/diy-camera-control-on-your-smartphone-via-an-arduino-uno-ble-shield/"
       },
-      "tags": "arduino,ble,camera"
+      "tags": "arduino,ble,redbearlabs"
     },
     {
       "title": "TI SensorTag Demo",
@@ -51,7 +51,7 @@
         "GitHub" : "https://github.com/divineprog/evo-demos/tree/master/Demos2014/TISensorTag",
         "Guide": "http://evothings.com/quick-guide-to-making-a-mobile-app-for-the-ti-sensortag-using-javascript/"
       },
-      "tags": "sensortag,ble"
+      "tags": "texasinstruments,sensortag,ble"
     },
     {
       "title": "Elevator Remote Control",
@@ -63,7 +63,7 @@
         "GitHub" : "https://github.com/evothings/EvothingsGallery/tree/master/elevator-remote-control",
         "Article": "http://evothings.com/how-to-make-an-app-for-remote-controlling-an-elevator-part-1"
       },
-      "tags": "electricimp,relay,elevator"
+      "tags": "electricimp,wifi"
     },
     {
       "title": "Magic Stone",
@@ -76,7 +76,7 @@
         "GitHub" : "https://github.com/divineprog/evo-demos/tree/master/Demos2014/MagicStone",
         "Article": "http://evothings.com/magic-stone-make-mobile-iot-applications-using-the-ti-sensortag-in-javascript/"
       },
-      "tags": "sensortag"
+      "tags": "texasinstruments,sensortag"
     }
   ]
 }
