@@ -437,8 +437,7 @@ a.resource {
 }
 
 #evo-gallery-list a.resource-YouTube,
-#evo-gallery-list a.resource-GitHub,
-#evo-gallery-list a.resource-Docs {
+#evo-gallery-list a.resource-GitHub {
 	float: left;
 	clear: none;
 
@@ -455,7 +454,7 @@ a.resource {
 }
 #evo-gallery-list a.resource-YouTube { background-image: url('gfx/youtube.png'); }
 #evo-gallery-list a.resource-GitHub { background-image: url('gfx/github.png'); }
-#evo-gallery-list a.resource-Docs { background-color: #ecd53b; }
+/*#evo-gallery-list a.resource-Docs { background-color: #ecd53b; }*/
 
 #evo-gallery-list
 p.read_more {

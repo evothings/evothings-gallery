@@ -77,6 +77,102 @@
         "Article": "http://evothings.com/magic-stone-make-mobile-iot-applications-using-the-ti-sensortag-in-javascript/"
       },
       "tags": "texasinstruments,sensortag"
+    },
+    {
+      "title": "Arduino BLE",
+      "description": "Communicate With Arduino Over BLE. This is an experimental example, that shows how to communicate with an Arduino board equipped with the Bluetooth Low Energy (BLE) shield.",
+      "author": "Evothings",
+      "image": "http://evothings.com/doc/images/examples/arduino-led-onoff-ble-screenshot.png",
+      "url": "http://evothings.com/demo/arduino-ble/app/index.html",
+      "links": {
+        "GitHub" : "https://github.com/evothings/evothings-examples/tree/master/examples/arduino-ble",
+        "Docs": "http://evothings.com/doc/examples/arduino-ble.html"
+      },
+      "tags": "example"
+    },
+    {
+      "title": "Arduino LED On/Off BLE",
+      "description": "Control The Arduino From An App Using BLE. This example shows how to make an app that controls an Arduino board.",
+      "author": "Evothings",
+      "image": "http://evothings.com/doc/images/examples/arduino-led-onoff-ble-screenshot.png",
+      "url": "http://evothings.com/demo/arduino-led-onoff-ble/app/index.html",
+      "links": {
+        "GitHub" : "https://github.com/evothings/evothings-examples/tree/master/examples/arduino-led-onoff-ble",
+        "Docs": "http://evothings.com/doc/examples/arduino-led-onoff-ble.html"
+      },
+      "tags": "example"
+    },
+    {
+      "title": "Arduino LED On/Off TCP",
+      "description": "Control The Arduino From An App. This example shows how to make an app that controls an Arduino board, by communicating over the TCP networking protocol.",
+      "author": "Evothings",
+      "image": "http://evothings.com/doc/images/examples/arduino-led-onoff-tcp-screenshot.png",
+      "url": "http://evothings.com/demo/arduino-led-onoff-tcp/app/index.html",
+      "links": {
+        "GitHub" : "https://github.com/evothings/evothings-examples/tree/master/examples/arduino-led-onoff-tcp",
+        "Docs": "http://evothings.com/doc/examples/arduino-led-onoff-tcp.html"
+      },
+      "tags": "example"
+    },
+    {
+      "title": "Arduino Scriptable",
+      "description": "Arduino Scripting Example. This example shows how to make a scriptable app that blinks a LED on the Arduino.",
+      "author": "Evothings",
+      "image": "http://evothings.com/doc/images/examples/arduino-scriptable-tcp-screenshot.png",
+      "url": "http://evothings.com/demo/arduino-scriptable-tcp/app/index.html",
+      "links": {
+        "GitHub" : "https://github.com/evothings/evothings-examples/tree/master/examples/arduino-scriptable-tcp",
+        "Docs": "http://evothings.com/doc/examples/arduino-scriptable-tcp.html"
+      },
+      "tags": "example"
+    },
+    {
+      "title": "Philips Hue Demo",
+      "description": "Light Up Your Room. This example shows how to make an app to control the Philips Hue lights.",
+      "author": "Evothings",
+      "image": "http://evothings.com/doc/images/examples/hue-lights-screenshot.png",
+      "url": "http://evothings.com/demo/hue-lights/index.html",
+      "links": {
+        "GitHub" : "https://github.com/evothings/evothings-examples/tree/master/examples/hue-lights",
+        "Docs": "http://evothings.com/doc/examples/hue-lights.html"
+      },
+      "tags": "example"
+    },
+    {
+      "title": "TI SensorTag Demo",
+      "description": "Make An App For The SensorTag. This app charts magnetometer data from the Texas Instruments SensorTag.",
+      "author": "Evothings",
+      "image": "http://evothings.com/doc/images/examples/ti-sensortag-demo-screenshot.png",
+      "url": "http://evothings.com/demo/ti-sensortag-demo/index.html",
+      "links": {
+        "GitHub" : "https://github.com/evothings/evothings-examples/tree/master/examples/ti-sensortag-demo",
+        "Docs": "http://evothings.com/doc/examples/ble-ti-sensortag.html"
+      },
+      "tags": "example"
+    },
+    {
+      "title": "iBeacon Scan",
+      "description": "Scan For iBeacons. This app demonstrates how to scan for iBeacons.",
+      "author": "Evothings",
+      "image": "http://evothings.com/doc/images/examples/ibeacon-scan-screenshot.png",
+      "url": "http://evothings.com/demo/ibeacon-scan/index.html",
+      "links": {
+        "GitHub" : "https://github.com/evothings/evothings-examples/tree/master/examples/ibeacon-scan",
+        "Docs": "http://evothings.com/doc/examples/ibeacon-scan.html"
+      },
+      "tags": "example"
+    },
+    {
+      "title": "BLE Scan",
+      "description": "Scan For BLE Devices.This app demonstrates how to scan Bluetooth Low Energy (BLE) devices and display the signal strength (rssi) of found devices.",
+      "author": "Evothings",
+      "image": "http://evothings.com/doc/images/examples/ble-scan-screenshot.png",
+      "url": "http://evothings.com/demo/ble-scan/index.html",
+      "links": {
+        "GitHub" : "https://github.com/evothings/evothings-examples/tree/master/examples/ble-scan",
+        "Docs": "http://evothings.com/doc/examples/ble-scan.html"
+      },
+      "tags": "example"
     }
   ]
 }
