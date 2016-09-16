@@ -1,4 +1,8 @@
-### Welcome to the Evothings IoT App Gallery repository!
+# This repository is no longer maintained
+
+Download Evothings Studio for up-to-date IoT demos and examples apps.
+
+### Data structure
 
 The gallery items are currently stored in gallery.json. The following JSON structure serves as an example:
 
